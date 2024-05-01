@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Fast-and-slow-in-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Fast-and-slow-in-scraping/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T13:15:18.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Fast-and-slow-in-scraping/">Fast and slow in scraping</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 21:15<br>Now I finally handled the scraping speed and made it a new parameter. In the night after I improving the speed of the for loops, my script started to download at ten times faster and the Bandwidth also reached 1Mbps each. Since I planned to scrap slowly but thoroughly, I always tried to keep a low Bandwidth. So I added “time.sleep()” to the code and it threw “AttributeError: ‘datetime.datetime’ object has no attribute ‘sleep’ “.<br>So the lib “time” and “datetime” collaped, I changed time by “import as” and now I reduced the Bandwidth below 1Mbps.<br>Well, I haven’t learned much about Bandwidth of a server. So I just check the Bandwidth when using the application to view, which is just around 4000kbps.<br>And so far I had only been banned with “Max retries exceeded”, so I didn’t know other criteria of banning and just in case.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Fast-and-slow-in-scraping/" data-id="clu5jyd9q0000v0va6e3vbkar" data-title="Fast and slow in scraping" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Checking-404-within-vs-before-the-loop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/24/Checking-404-within-vs-before-the-loop/" class="article-date">
@@ -466,44 +505,6 @@
 
 
   
-    <article id="post-Weather" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Weather/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T10:09:08.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Weather/">Weather</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Weather/" data-id="clu2r9s7z0000s0va8jvua13q" data-title="Weather" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -541,7 +542,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -552,6 +553,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/05/01/All-walks-of-life/">All walks of life</a>
+          </li>
         
           <li>
             <a href="/2024/04/30/More-rehabilitation-of-knee-injury/">More rehabilitation of knee injury</a>
@@ -567,10 +572,6 @@
         
           <li>
             <a href="/2024/04/28/morning-0/">morning</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/27/Is-Digitalization-the-future/">Is Digitalization the future</a>
           </li>
         
       </ul>

@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-userdata-cannot-scan-deleted-files-by-cutting" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/19/userdata-cannot-scan-deleted-files-by-cutting/" class="article-date">
+  <time class="dt-published" datetime="2024-03-19T14:52:06.000Z" itemprop="datePublished">2024-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/19/userdata-cannot-scan-deleted-files-by-cutting/">userdata cannot scan deleted files by cutting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-19 22:52<br>When using USb to transfer two files with 1-2G size in the directory &#x2F;0&#x2F;Android&#x2F;data&#x2F;com.appname&#x2F;cache, it stuck and I just canceled. Then I found the files are disappeared, and after I pull the whole userdata img out with FTK to check, there was still no deleted files.<br>Again this is the risk of transfering files by cutting, so for important files, unsure connection or just for sure the copying and deleting method is recommanded.<br>I will check the img again after learning TSK.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/19/userdata-cannot-scan-deleted-files-by-cutting/" data-id="cltzcdzlj00040cva1upe3so5" data-title="userdata cannot scan deleted files by cutting" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Export-flyme-cloud-data-with-Redmi2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/19/Export-flyme-cloud-data-with-Redmi2/" class="article-date">
@@ -459,50 +500,6 @@
 
 
   
-    <article id="post-Improve-the-StreetView-repository" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/16/Improve-the-StreetView-repository/" class="article-date">
-  <time class="dt-published" datetime="2024-03-16T13:17:33.000Z" itemprop="datePublished">2024-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/16/Improve-the-StreetView-repository/">Improve the StreetView repository</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-16 21:17<br>After examining the network communication, it is easy to find the images with higher resolution are tiled with separate url like:<br><a target="_blank" rel="noopener" href="https://mapsv0.bdimg.com/?qt=pdata&sid=">https://mapsv0.bdimg.com/?qt=pdata&amp;sid=</a> &amp;pos&#x3D;3_3&amp;z&#x3D;4&amp;udt&#x3D;20200825&amp;from&#x3D;PC&amp;auth&#x3D; &amp;seckey&#x3D; </p>
-<p>I found in each sid, a six-figure segment is the timestamp with the formal yymmdd. However, I haven’t found any method to separatly choose the timestamp and the rest of the numbers in sid seem not with special meaning. So I suppose different timestamp are mixed together, which makes me wonder how to call the api to get differnet timestamp if the api is one-to-one of the coordinates.</p>
-<p>2024-03-16 22:31<br>Now I tested the parameters, modified the script and uploaded to the ECS, but no images scrapped. After checking the functions, I found the response of the different url is different.</p>
-<p>2024-03-16 22:48<br>After checking the separate response, I found the author used<br>“ if response.status_code &#x3D;&#x3D; 200 and response.headers.get(‘Content-Type’) &#x3D;&#x3D; ‘image&#x2F;jpeg’:<br>        return response.content”<br>to check the response type, while the response type of the url I chosen is ‘text’. So I just removed the type check and the script started to download the images.<br>Although I added two more for loops, I think it deserved for the higher resolution.<br>However, still need to figure out how to choose the timestamp.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/Improve-the-StreetView-repository/" data-id="cltvli7vs000f7wva8l7sgft3" data-title="Improve the StreetView repository" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -540,7 +537,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -551,6 +548,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/05/01/All-walks-of-life/">All walks of life</a>
+          </li>
         
           <li>
             <a href="/2024/04/30/More-rehabilitation-of-knee-injury/">More rehabilitation of knee injury</a>
@@ -566,10 +567,6 @@
         
           <li>
             <a href="/2024/04/28/morning-0/">morning</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/27/Is-Digitalization-the-future/">Is Digitalization the future</a>
           </li>
         
       </ul>
