@@ -69,6 +69,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Mornings" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/25/Mornings/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T22:44:35.000Z" itemprop="datePublished">2024-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/25/Mornings/">Mornings</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-25 06:44<br>Recently things became harder for weekdays are getting busier and noiser, left little time for scraping scripts. So I have to complement my scripts fast. It has been worthwile to get to the room at 6:30 for keeping my desktop scraping without being clear out, but recently the earplugs were not enough for getting sleep before 00:20. Since it is recommanded to have 6 hours’ sleep, the wake up time therefore became 6:40, which would cause the desktop being cleared out.</p>
+<p>2024-03-25 07:35<br>This made me think of whether I could use a power bank with enough output to keep my desktop running. Also, this brings the power usage computation of my desktop.</p>
+<p>2024-03-25 07:46<br>Mornings are hard and noisy in the building with wheelings and desks, so I will do some chores and do a quick test of yesterday’s script.</p>
+<p>2024-03-25 07:56<br>Now I found HDinfo to check the power usage.</p>
+<p>2024-03-25 08:20<br>So the total power of my laptop (Oh, so I mixed desktop and laptop before.) is around 25W. The overall cost is around 0.6kWh*price per day.</p>
+<p>2024-03-25 08:29<br>So the price is not high, I will set up a Mini PC to do the 24h scraping job.<br>And the mAh needed for a night is 10256.410256-12121.212121, so a power bank could maintain.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/25/Mornings/" data-id="clumj7gxx00103kva1ztn8g5i" data-title="Mornings" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Use-time-for-if-conditions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Use-time-for-if-conditions/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T14:22:54.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Use-time-for-if-conditions/">Use time for if conditions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 22:22<br>Since tonight is quite and smooth, I examinated my html script again. I found I just added the start timer “time0&#x3D;0” at the beginning, this caused after<br>if((time.time()-time0) &gt; thres):<br>    date&#x3D;date+1<br>    continue<br>the “(time.time()-time0) &gt; thres” will always be True since I didn’t update the time0. So I changed the code<br> if((time.time()-time0) &gt; thres):<br>     date&#x3D;date+1<br>     time0&#x3D;time.time()<br>     continue<br>to make time0 follow up the time.time()</p>
+<p>2024-03-24 22:31<br>And I found I also didn’t download the correct url after the timer chcek, for the iterate was used before the if sentence.</p>
+<p>2024-03-24 22:34<br>Now I know when the if condition is not satisfied, the iterate just keeps running and therefore when day+1, the first number of this day has already passed. However, due to the discontinuity, I still couldn’t use 404 to make day+1. So I think I should record the first 404 number, for it mostly is the first number of the next day.</p>
+<p>2024-03-24 22:40<br>But how could I used the recorded number to restart iterate, so for loop is not suitable.</p>
+<p>2024-03-24 22:52<br>So there are retracing of iterator and recursion when adjacent 404 occurs, which makes the algorithm a bit complex.</p>
+<p>2024-03-25 9:42<br>Weird, I put the recursion funtcion in the while loop but it only executed once and then stuck. And when I changed while loop by for loop, it could download for one day, so the problem is in the iterator.</p>
+<p>2024-03-25 9:48<br>Oh, this is because I set the initial variables before the recursion function, so I need to use “global” modifier.<br>Now it threw:<br> global time0&#x3D;time.time()<br>                ^<br>SyntaxError: invalid syntax</p>
+<p>2024-03-25 11:12<br>So “global” is used as<br>“global time0<br> time0&#x3D;time.time()”<br>And global variabes cannot be parameters.</p>
+<p>2024-03-25 11:15<br>And now I realized the error “Max retries exceeded with url:” doesn’t only mean it is banned.<br>I will try add “<br>requests.adapters.DEFAULT_RETRIES &#x3D; 5” and “keep_alive &#x3D; False”.</p>
+<p>2024-03-25 19:10<br>Now I found maybe my recursion was duplicate, for the recursion and while loop having the same function of start+&#x3D;1 to iterate. After “day+1”, the iterater &#x3D; record which was the first 404 iterate number and it should be the first number of the next day. So I replaced the recursion with checking 200 and downloading, since as long as day+1 , the while loop could continue.</p>
+<p>And I am not sure about my “record&#x3D; iterator-1” and iterator&#x3D;record”. After reviewing the function of “&#x3D;”, I think I should use copy.deepcopy since I want to pass the int value, but it still could only download one day and I feel weird about this.</p>
+<p>2024-03-25 19:22<br>After examinating the code again, I put “start+&#x3D;1” out of the download function, also for simplify the code. But it still did not work.</p>
+<p>2024-03-25 19:28<br>Now I simplified the second if condition by removing the block with no execution, and I still did not clear about the usage of global. I declared the global iterator variable in the main funcion but it still threw error in the download function<br>“UnboundLocalError: local variable referenced before assignment”</p>
+<p>2024-03-25 19:33<br>So “global “ is used in the function after declare the variable before the function.</p>
+<p>2024-03-25 19:40<br>Now Im confused whether if : also limits the variables to its scope since {} in C does this, and I actually just need to change the variable declared outside the function but not outside all the functions. After a second thought, now I do not need recursion so I also don’t need to use two functions.</p>
+<p>2024-03-25 19:47<br>Now I merged the two functions and remembered that I learned that more code in compiling time could improve the runtime speed, which I now witnessed.</p>
+<p>2024-03-25 19:56<br>So the variable in if:&#x2F;else: is local, but the global variable can be used.</p>
+<p>2024-03-25 20:20<br>Now I found the “day” variable wasn’t updated, so I need to solve the scope issue.</p>
+<p>2024-03-25 20:23<br>But the “prefix” variable declared in if : and else : could be used afterwards in the while loop, this is where my confusion came from.</p>
+<p>2024-03-25 20:28<br>Well, now no matter neither the former day nor the later day could not download, so I could download 2551 htmls one day and then be banned.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Use-time-for-if-conditions/" data-id="clumj7gy4001r3kvacoo23wps" data-title="Use time for if conditions" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Fast-and-slow-in-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/24/Fast-and-slow-in-scraping/" class="article-date">
@@ -423,93 +525,11 @@
 
 
   
-    <article id="post-Taxi-Bus-Passport-and-Mater-Card" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/" class="article-date">
-  <time class="dt-published" datetime="2024-03-22T13:31:24.000Z" itemprop="datePublished">2024-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/">Taxi, Bus, Passport and Mater Card</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-22 21:31<br>Sometimes, hard conditions just trigger doing hard things, with expanded scopes.<br>Due to mu campus’ isolated location, I realized traveling really costs a lot. Now I truly know the function of bus is to connect suburbans to the city like branches and form a network in the city. As long as the stations are easy to find, it could save a lot from taxi.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/" data-id="clu2r9s840001s0va5anldq6n" data-title="Taxi, Bus, Passport and Mater Card" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Windows10-fans-intermittently-accerlate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/22/Windows10-fans-intermittently-accerlate/" class="article-date">
-  <time class="dt-published" datetime="2024-03-22T13:11:49.000Z" itemprop="datePublished">2024-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/22/Windows10-fans-intermittently-accerlate/">Windows10&#39; fans intermittently accerlate</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-22 21:11<br>Today my desktop’s fans became noisy again, this is the first time that the fans kept intermittently accerlating and pausing for a while.<br>I had tried restarting and prohibiting “Diagnostic Policy, Diagnostic Service Host, Diagnostic System Host and Connected User Experiences and Telemetry” in “Services” in the setting, but all no use.<br>And now I am more confused with the setting of Windows.</p>
-<p>2024-03-22 22:13<br>One suspicious point is, in the tasks, there pop up “System”, “Microsoft Network Realtime” and plenty of new processes like “Lenovo Netobook ITS Service”.</p>
-<p>2024-03-22 22:22<br>Well, I think maybe it’s time to find an Anti-virus software.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/Windows10-fans-intermittently-accerlate/" data-id="clu2r9s870002s0vagagiegjp" data-title="Windows10&#39; fans intermittently accerlate" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -555,6 +575,14 @@
       <ul>
         
           <li>
+            <a href="/2024/05/01/Observation-and-theory/">Observation and theory</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/01/Effects-of-memories/">Effects of memories</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/01/All-walks-of-life/">All walks of life</a>
           </li>
         
@@ -564,14 +592,6 @@
         
           <li>
             <a href="/2024/04/30/Buy-secondhand-clothes/">Buy secondhand clothes</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/28/Memory-recurrence-when-retracing/">Memory recurrence when retracing</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/28/morning-0/">morning</a>
           </li>
         
       </ul>
