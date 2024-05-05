@@ -69,6 +69,185 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-To-do-list-today" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/17/To-do-list-today/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T22:58:16.000Z" itemprop="datePublished">2024-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/17/To-do-list-today/">To-do list today</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-17 06:58</p>
+<ol>
+<li>Check the scrapped images and deviation</li>
+<li>Try QGIS to generate coordinates</li>
+<li>make ECS and cp713 to keep executing after ssh is disconnected</li>
+<li>Find out the timestamp choice</li>
+<li>Might fix hexo or later</li>
+</ol>
+<p>It is helpful to have to-do list, especially when sleep less.<br>Anyway, I had used to sleep less since 2018. In my hometown, there will be leaves circling around the ground with strong winds.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/17/To-do-list-today/" data-id="cltvli7vw000s7wva68tbcgkx" data-title="To-do list today" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Improve-the-StreetView-repository" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/Improve-the-StreetView-repository/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T13:17:33.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/Improve-the-StreetView-repository/">Improve the StreetView repository</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-16 21:17<br>After examining the network communication, it is easy to find the images with higher resolution are tiled with separate url like:<br><a target="_blank" rel="noopener" href="https://mapsv0.bdimg.com/?qt=pdata&sid=">https://mapsv0.bdimg.com/?qt=pdata&amp;sid=</a> &amp;pos&#x3D;3_3&amp;z&#x3D;4&amp;udt&#x3D;20200825&amp;from&#x3D;PC&amp;auth&#x3D; &amp;seckey&#x3D; </p>
+<p>I found in each sid, a six-figure segment is the timestamp with the formal yymmdd. However, I haven’t found any method to separatly choose the timestamp and the rest of the numbers in sid seem not with special meaning. So I suppose different timestamp are mixed together, which makes me wonder how to call the api to get differnet timestamp if the api is one-to-one of the coordinates.</p>
+<p>2024-03-16 22:31<br>Now I tested the parameters, modified the script and uploaded to the ECS, but no images scrapped. After checking the functions, I found the response of the different url is different.</p>
+<p>2024-03-16 22:48<br>After checking the separate response, I found the author used<br>“ if response.status_code &#x3D;&#x3D; 200 and response.headers.get(‘Content-Type’) &#x3D;&#x3D; ‘image&#x2F;jpeg’:<br>        return response.content”<br>to check the response type, while the response type of the url I chosen is ‘text’. So I just removed the type check and the script started to download the images.<br>Although I added two more for loops, I think it deserved for the higher resolution.<br>However, still need to figure out how to choose the timestamp.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/Improve-the-StreetView-repository/" data-id="cltvli7vs000f7wva8l7sgft3" data-title="Improve the StreetView repository" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Glance-at-router-devices" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/Glance-at-router-devices/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T08:05:19.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/Glance-at-router-devices/">Glance at router devices</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-16 16:05<br>Now I am sure about my Hotspot in the Android could only cover small area of adjacent rooms. So now it is just the time to search about router devices.<br>I haven’t learn about router before, now I need the network to cover at least a whole building. So I need to search about the covering ability.</p>
+<p>2024-03-16 16:25<br>Now I found guides about using linux device as router but without mentioning the covering ability.<br>And someone said Android hotspot could reach 800m.</p>
+<p>2024-03-16 16:32<br>So dual band router could have better network, but I still need to figure out whether the coverage of Android device is sufficient.<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/215025/how-to-use-android-device-as-router-without-cellular-connection">https://android.stackexchange.com/questions/215025/how-to-use-android-device-as-router-without-cellular-connection</a></p>
+<p>2024-03-16 16:43<br>Since wt88047 could flash Archlinux, I wonder whether it could use openwrt to become a router. Now I still have no idea about how to increase the covering range of Android device.</p>
+<p>2024-03-16 18:28<br>Now I searched about mesh router and had a quick glance of the router products. So forwarding network between buildings itself is difficult and nearly can’t done with just one router. And with the price consideration, I prefer to rent a VPS to use frp and scrap at the same time.<br>And I just realized that I could use USB to tether (First time to see the word with technological meaning) ipv6<br>network to my cp713, I will give it a try.</p>
+<p>And I just searched that wt88047 supports 802.11 b&#x2F;gn wireless network, which I don’t recongized but I will try to make it a router. And with two Android router I should be able to have larger cover.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/Glance-at-router-devices/" data-id="cltvli7vo00087wva5lbq9blp" data-title="Glance at router devices" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/router/" rel="tag">router</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-About-VPS-and-ECS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/About-VPS-and-ECS/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T07:29:30.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/About-VPS-and-ECS/">About VPS and ECS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-16 15:32<br>Actually I already had an ECS trial two years ago, at which time I know nothing about linux and ssh.<br>Now I finally get fimiliar with linux and can use ECS to scrap with py script. </p>
+<p>I just heared about ECS recently, short for “Elastic Container Service”. While VPS is short for “Virtual Private Server”, so I mixed them up in the previous blogs. <a target="_blank" rel="noopener" href="https://www.ibm.com/topics/vps">https://www.ibm.com/topics/vps</a><br>So they are all cloud server, I heared about VPS mostly in the blogs of proxy.<br>In a word, after searching, I think ECS is a new product which is more focused on the personal usage with more containers equipted. While VPS, I think, is more like a server which needs more setting up procedure.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/About-VPS-and-ECS/" data-id="cltvli7vl00037wvafaxhdczc" data-title="About VPS and ECS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-A-glance-at-GIS-and-StreetView-scrap-example" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/16/A-glance-at-GIS-and-StreetView-scrap-example/" class="article-date">
@@ -376,187 +555,11 @@
 
 
   
-    <article id="post-Img-of-Mi5-flashing-MIUI10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/14/Img-of-Mi5-flashing-MIUI10/" class="article-date">
-  <time class="dt-published" datetime="2024-03-14T09:36:23.000Z" itemprop="datePublished">2024-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/14/Img-of-Mi5-flashing-MIUI10/">Img of Mi5 flashing MIUI10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-14 17:36<br>Well, look like scanning Mi5 becomes harder. I finally use cp713 to pull the img of userdata, before the encryption of the first boot.<br>However, the img file contains nothing when I use FTK to check it.<br>Maybe this is beause it hasn’t booted, there is no storage or emulated&#x2F;0 folder which should reserved by Miflash. The img is 54.8G so it surely contains all the userdata partion.<br>I haven’t learned about Android encryption and I had made separatly copy of storage and data partion. Although I haven’t check whether the former data partion made with QFIL by 9008 mode with pixel experience is encrypted. I will put this later since the former img is not here.</p>
-<p>This is all the partions and I don’t know which is related to encryption.<br>&#x2F;dev&#x2F;block&#x2F;platform&#x2F;soc&#x2F;624000.ufshc&#x2F;by-name # [6nls<br>aboot         bk3           boot          ddr           fsc           lksecappbak   oops          sec           userdata<br>abootbak      bk4           cache         devcfg        fsg           logo          persist       splash        xbl<br>apdp          bk5           cdt           devcfgbak     hyp           mdtp          pmic          ssd           xblbak<br>bk1           bk6           cmnlib        devinfo       hypbak        misc          pmicbak       sti<br>bk10          bk7           cmnlib64      dip           keymaster     modem         recovery      switch<br>bk11          bk8           cmnlib64bak   dpo           keymasterbak  modemst1      reserve       system<br>bk12          bk9           cmnlibbak     dsp           keystore      modemst2      rpm           tz<br>bk2           bluetooth     cust          frp           lksecapp      msadp         rpmbak        tzbak</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/14/Img-of-Mi5-flashing-MIUI10/" data-id="cltvli7vp000c7wvaawwqeq7i" data-title="Img of Mi5 flashing MIUI10" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Tips-of-dealing-with-noise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/14/Tips-of-dealing-with-noise/" class="article-date">
-  <time class="dt-published" datetime="2024-03-14T09:05:29.000Z" itemprop="datePublished">2024-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/14/Tips-of-dealing-with-noise/">Tips of dealing with noise</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-14 17:05</p>
-<p>Well, since I have began to endure both immediate, long-lasting and fixed-time noises since 2018. I have been rather fimiliar with how to deal with these.<br>For immediate, not long-lasting nise, changing to another place may cost more time. So it is better to prepare some chores (oops I misspelled it as chaos in the former blog) and tasks that need less thinking. For me rencently, I have an api which closed the serach by name option and only left the clicking panel function so it is difficult to use selenium to specify the route.<br>For long-lasting, fixed-time or too loud noise, changing to another place will be good choice, also this could avoid sitting still roo long.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/14/Tips-of-dealing-with-noise/" data-id="cltvli7vw000t7wvaey06evnc" data-title="Tips of dealing with noise" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Adb-crashed-when-pulling-64G-img-and-About-cp713" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/14/Adb-crashed-when-pulling-64G-img-and-About-cp713/" class="article-date">
-  <time class="dt-published" datetime="2024-03-14T06:48:29.000Z" itemprop="datePublished">2024-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/14/Adb-crashed-when-pulling-64G-img-and-About-cp713/">Adb crashed when pulling 64G img and About cp713</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-14 14:48<br>After having the adb toolkit in my Windows10 crashed more than 10 times, I finally took out my Spin13 to do this.<br>It is weird the adb tookit works fine with find7 and meilan2, both 16G.</p>
-<p>By the way, the SD card path in Chromeos “&#x2F;mnt&#x2F;chromeos&#x2F;external&#x2F;“SD Card” “and its “ is not in the English input mode is quite unconvenient.</p>
-<p>2024-03-14 15:23<br>Well, I just found chromeos will aotumatically lock the screen and the adb process will terminate with error “cannot write transport endpoint is not connected”.<br>I didn’t find the setting of avoiding screen lock, so I have to move the icon every few minutes.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/14/Adb-crashed-when-pulling-64G-img-and-About-cp713/" data-id="cltvli7vm00047wva18qp9yxk" data-title="Adb crashed when pulling 64G img and About cp713" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Setup-STK-sleuthkit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/14/Setup-STK-sleuthkit/" class="article-date">
-  <time class="dt-published" datetime="2024-03-14T06:12:51.000Z" itemprop="datePublished">2024-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/14/Setup-STK-sleuthkit/">Setup STK/sleuthkit</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-14 16:30<br>Conclusion:<br>Ah! Forget about Windows. Why should I waste hours of time to set up the Windows environment when I could just use “sudo apt install sleuthkit” to get things done?</p>
-<p>2024-03-14 13:55<br>Now I finally know what MINGW is, a compensate of linux for my cp713’s poor screen and CPU.</p>
-<p>2024-03-14 14:08<br>So firstly, to install MINGW32, just download and install msys32 and install gcc with pacman.</p>
-<p>2024-03-14 14:44<br>I don’t have a configure file so I need to install automake,<br>autoconf, and libtool. </p>
-<p>2024-03-14 15:03<br>Well, pacman seems very convenient just like apt.<br>But I didn’t find “bootstrap” script.</p>
-<p>2024-03-14 15:16<br>Oh, now I see I only downloaded the zip source file from the website, using git clone root path will solve it.</p>
-<p>2024-03-14 15:36<br>Oh, finally I have bootstrap to begin the installation.</p>
-<p>2024-03-14 15:40<br>Well, I met error like this, I guess this is due to missing make.<br>config.status: error: Something went wrong bootstrapping makefile fragments<br>    for automatic dependency tracking.  If GNU make was not used, consider<br>    re-running the configure script with MAKE&#x3D;”gmake” (or whatever is<br>    necessary).  You can also try re-running configure with the<br>    ‘–disable-dependency-tracking’ option to at least be able to build<br>    the package (albeit without support for automatic dependency tracking).<br>See ‘config.log’ for more details</p>
-<p>2024-03-14 15:59<br>Well, now make can work but I got:<br>make[2]: *** [Makefile:561: fatfs_dent.lo] Error 1<br>make[2]: Leaving directory ‘&#x2F;c&#x2F;su&#x2F;emmc&#x2F;STK&#x2F;sleuthkit&#x2F;tsk&#x2F;fs’<br>make[1]: *** [Makefile:545: install-recursive] Error 1<br>make[1]: Leaving directory ‘&#x2F;c&#x2F;su&#x2F;emmc&#x2F;STK&#x2F;sleuthkit&#x2F;tsk’<br>make: *** [Makefile:562: install-recursive] Error 1</p>
-<p>2024-03-14 16:07<br>I do have tsk now so “make” step should worked fine. I don’t have “usr&#x2F;local&#x2F;bin” after “make install”.<br>And errors mentioned in INSTALL.txt didn’t occur, so I think error is in make.</p>
-<p>2024-03-14 16:14<br>Wait a minute, where is “usr&#x2F;bin” in Windows?</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/14/Setup-STK-sleuthkit/" data-id="cltvli7vu000n7wvagmx3d69d" data-title="Setup STK/sleuthkit" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STK/" rel="tag">STK</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -602,23 +605,23 @@
       <ul>
         
           <li>
+            <a href="/2024/05/05/Vera-Rubin/">Vera Rubin</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/05/Before-changing-timezone/">Before changing timezone</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/A-glance-at-Quantum-computer/">A glance at Quantum computer</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/Secondhand-jacket-with-musty-smell/">Secondhand jacket with musty smell</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/03/Use-Cloud-Drive/">Use Cloud Drive for temporary use</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/03/Copy-GBs-small-files-via-adb/">Copy GBs small files via adb</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Clone-HDDs-with-laptop/">Clone HDDs with laptop</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Mass-and-information/">Mass and information</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/01/Is-it-deterministic/">Is it deterministic?</a>
           </li>
         
       </ul>

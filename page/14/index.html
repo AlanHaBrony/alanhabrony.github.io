@@ -69,6 +69,187 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Dumping-my-meilan2c" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Dumping-my-meilan2c/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T04:11:29.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Dumping-my-meilan2c/">Dumping my meilan2c</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 12:11</p>
+<p>Well, I decide to just pull the userdata now. But when I used the command “adb shell &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su -c “cat &#x2F;dev&#x2F;block&#x2F;dm-0 2&gt; &#x2F;dev&#x2F;null” &gt; userdata.img”<br>in <a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364">https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364</a></p>
+<p>it showed dm-0 not exist, so I just tried “adb pull &#x2F;dev&#x2F;block&#x2F;mmcblk0 “, which ran correctly.<br>I wonder whether this is due to my meilan2c has already unblocked BL and has flashed CM14 before.</p>
+<p>Now I still need to find out how to copy the whole emmc, and I wonder whether flashing ROM changes the partion table and how to recovery the fies before flashing.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Dumping-my-meilan2c/" data-id="cltmiavjz0000mkvahois7b5g" data-title="Dumping my meilan2c" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Materials-for-dumping-mtk-devices" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Materials-for-dumping-mtk-devices/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T03:33:09.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Materials-for-dumping-mtk-devices/">Materials for dumping mtk devices</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 11:34</p>
+<p>The steps of backup mtk devices:<br>“Mediatek devices do following:<br>if your device is encrypted<br>get a temp root shell with mtk-su<br>dump your decrypted userdata partition &#x2F;dev&#x2F;block&#x2F;dm-0<br>(this will take ~25 GB&#x2F;h)</p>
+<p>sudo apt-get install android-tools-adb extundelete testdisk<br>adb push mtk-su &#x2F;data&#x2F;local&#x2F;tmp&#x2F;<br>adb shell chmod 0755 &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su<br>adb shell &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su -c “cat &#x2F;dev&#x2F;block&#x2F;dm-0 2&gt; &#x2F;dev&#x2F;null” &gt; userdata.img”</p>
+<p><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364">https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364</a></p>
+<p>About mtk-su:<br><a target="_blank" rel="noopener" href="https://xdaforums.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/">https://xdaforums.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/</a></p>
+<p>Partions and what’s scatter file of mtk:<br><a target="_blank" rel="noopener" href="https://www.lieberbiber.de/2015/07/04/mediatek-details-partitions-and-preloader/">https://www.lieberbiber.de/2015/07/04/mediatek-details-partitions-and-preloader/</a></p>
+<p>Well, however, I still prefer to have a full copy the how emmc of my m2c, since it is just total 16G.<br>As the thoughts about data recovery:<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/210358/would-it-be-theoretically-possible-to-do-a-block-level-backup-of-dev-media-with#">https://android.stackexchange.com/questions/210358/would-it-be-theoretically-possible-to-do-a-block-level-backup-of-dev-media-with#</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Materials-for-dumping-mtk-devices/" data-id="cltmea3ax00007kvaertca4rn" data-title="Materials for dumping mtk devices" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Workflow-of-Andorid-Data-Recovery-with-root-and-PC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T02:20:55.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/">Workflow of Andorid Data Recovery with root and PC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 10:20</p>
+<p>“After TWRP is installed, I could create a NANDroid backup of specific partitions (raw images) then set them read only and mounted on PC I could use some IT-Forensics apps… to recover deleted (non-overwrited files)”<br>“If your device is unlocked, you could even use TWRP without installing it: fastboot boot twrp.img would directly boot it without any modifications to the device. –<br>Izzy♦ Dec 29, 2017 at 8:15”<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/188213/solved-how-to-recover-data-from-android-sdcard-downloads-on-xiaomi?newreg=9987614e8c844a35abc4de93d0f3a564">https://android.stackexchange.com/questions/188213/solved-how-to-recover-data-from-android-sdcard-downloads-on-xiaomi?newreg=9987614e8c844a35abc4de93d0f3a564</a></p>
+<p>“<a target="_blank" rel="noopener" href="https://android.stackexchange.com/tags/data-recovery/info">https://android.stackexchange.com/tags/data-recovery/info</a>“</p>
+<p>2024-03-11 10:27</p>
+<p>“With a custom recovery: Take a nandroid backup<br>With a rooted device: create images from your storage”<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/89777/my-android-phone-is-completely-reset-whats-the-best-way-to-recover-the-deleted">https://android.stackexchange.com/questions/89777/my-android-phone-is-completely-reset-whats-the-best-way-to-recover-the-deleted</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/" data-id="cltmbpvzf0000gwva7crk8u00" data-title="Workflow of Andorid Data Recovery with root and PC" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Is-dd-full-copy-of-partions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Is-dd-full-copy-of-partions/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T01:51:00.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Is-dd-full-copy-of-partions/">Is dd full copy of partions?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 09:51</p>
+<p>While searching for making copy of Android deviecs, I found dd in linux is easy to use<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc">https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc</a><br>So dd could make a full backup, while my goal is trying to recovery the wrapped data, I need the function like copy sectors of all uesd and spare ones.</p>
+<p>2024-03-11 10:05<br>So dd chould make a full copy of a disk.<br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/4906/using-dd-for-disk-cloning">https://serverfault.com/questions/4906/using-dd-for-disk-cloning</a><br>With some attentions:<br>1.”clone disks having bad blocks: dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;4096 conv&#x3D;sync,noerror –<br>Sam Watkins Nov 14, 2014 at 6:52”</p>
+<p>2.”dd is most certainly the best cloning tool, it will create a 100% replica simply by using the following command. I’ve never once had any problems with it.<br>dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;32M status&#x3D;progress<br>Be aware that while cloning every byte, you should not use this on a drive or partition that is being used. Especially applications like databases can’t cope with this very well and you might end up with corrupted data.”</p>
+<p>Since there is no bad sectors in my m2c, now I need to do is specify the if command.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Is-dd-full-copy-of-partions/" data-id="cltmb5pnd0000dsva3g0taeaf" data-title="Is dd full copy of partions?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Materials-for-reading-emmc-of-MTK-platform" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/" class="article-date">
@@ -328,165 +509,11 @@ which with enough resolution,
 
 
   
-    <article id="post-Finally-not-404" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Finally-not-404/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:51:16.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Finally-not-404/">Finally not 404</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>From sketch, I followed the guide, created Github Pages, setup the hexo and git and generated the posts.<br>Then the 404 began, I searched all the blogs and tried again and again.<br>However, in the end I found I used the wrong email to generate the key.</p>
-<p>Now I learned how to use git and hexo.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Finally-not-404/" data-id="cltlgfvbf00006ovaeuf72bop" data-title="Finally not 404" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-6/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:36:28.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-6/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-6/" data-id="cltlfvofm00001svaarn285v5" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-5/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:18:59.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-5/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-5/" data-id="cltlf985h0000ksva6223fwze" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-4/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:02:44.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-4/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-4/" data-id="cltleo7yo0000v0vaeiqn83pr" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -532,23 +559,23 @@ which with enough resolution,
       <ul>
         
           <li>
+            <a href="/2024/05/05/Vera-Rubin/">Vera Rubin</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/05/Before-changing-timezone/">Before changing timezone</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/A-glance-at-Quantum-computer/">A glance at Quantum computer</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/Secondhand-jacket-with-musty-smell/">Secondhand jacket with musty smell</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/03/Use-Cloud-Drive/">Use Cloud Drive for temporary use</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/03/Copy-GBs-small-files-via-adb/">Copy GBs small files via adb</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Clone-HDDs-with-laptop/">Clone HDDs with laptop</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Mass-and-information/">Mass and information</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/01/Is-it-deterministic/">Is it deterministic?</a>
           </li>
         
       </ul>

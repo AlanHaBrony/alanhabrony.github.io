@@ -69,6 +69,188 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Use-time-for-if-conditions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Use-time-for-if-conditions/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T14:22:54.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Use-time-for-if-conditions/">Use time for if conditions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 22:22<br>Since tonight is quite and smooth, I examinated my html script again. I found I just added the start timer “time0&#x3D;0” at the beginning, this caused after<br>if((time.time()-time0) &gt; thres):<br>    date&#x3D;date+1<br>    continue<br>the “(time.time()-time0) &gt; thres” will always be True since I didn’t update the time0. So I changed the code<br> if((time.time()-time0) &gt; thres):<br>     date&#x3D;date+1<br>     time0&#x3D;time.time()<br>     continue<br>to make time0 follow up the time.time()</p>
+<p>2024-03-24 22:31<br>And I found I also didn’t download the correct url after the timer chcek, for the iterate was used before the if sentence.</p>
+<p>2024-03-24 22:34<br>Now I know when the if condition is not satisfied, the iterate just keeps running and therefore when day+1, the first number of this day has already passed. However, due to the discontinuity, I still couldn’t use 404 to make day+1. So I think I should record the first 404 number, for it mostly is the first number of the next day.</p>
+<p>2024-03-24 22:40<br>But how could I used the recorded number to restart iterate, so for loop is not suitable.</p>
+<p>2024-03-24 22:52<br>So there are retracing of iterator and recursion when adjacent 404 occurs, which makes the algorithm a bit complex.</p>
+<p>2024-03-25 9:42<br>Weird, I put the recursion funtcion in the while loop but it only executed once and then stuck. And when I changed while loop by for loop, it could download for one day, so the problem is in the iterator.</p>
+<p>2024-03-25 9:48<br>Oh, this is because I set the initial variables before the recursion function, so I need to use “global” modifier.<br>Now it threw:<br> global time0&#x3D;time.time()<br>                ^<br>SyntaxError: invalid syntax</p>
+<p>2024-03-25 11:12<br>So “global” is used as<br>“global time0<br> time0&#x3D;time.time()”<br>And global variabes cannot be parameters.</p>
+<p>2024-03-25 11:15<br>And now I realized the error “Max retries exceeded with url:” doesn’t only mean it is banned.<br>I will try add “<br>requests.adapters.DEFAULT_RETRIES &#x3D; 5” and “keep_alive &#x3D; False”.</p>
+<p>2024-03-25 19:10<br>Now I found maybe my recursion was duplicate, for the recursion and while loop having the same function of start+&#x3D;1 to iterate. After “day+1”, the iterater &#x3D; record which was the first 404 iterate number and it should be the first number of the next day. So I replaced the recursion with checking 200 and downloading, since as long as day+1 , the while loop could continue.</p>
+<p>And I am not sure about my “record&#x3D; iterator-1” and iterator&#x3D;record”. After reviewing the function of “&#x3D;”, I think I should use copy.deepcopy since I want to pass the int value, but it still could only download one day and I feel weird about this.</p>
+<p>2024-03-25 19:22<br>After examinating the code again, I put “start+&#x3D;1” out of the download function, also for simplify the code. But it still did not work.</p>
+<p>2024-03-25 19:28<br>Now I simplified the second if condition by removing the block with no execution, and I still did not clear about the usage of global. I declared the global iterator variable in the main funcion but it still threw error in the download function<br>“UnboundLocalError: local variable referenced before assignment”</p>
+<p>2024-03-25 19:33<br>So “global “ is used in the function after declare the variable before the function.</p>
+<p>2024-03-25 19:40<br>Now Im confused whether if : also limits the variables to its scope since {} in C does this, and I actually just need to change the variable declared outside the function but not outside all the functions. After a second thought, now I do not need recursion so I also don’t need to use two functions.</p>
+<p>2024-03-25 19:47<br>Now I merged the two functions and remembered that I learned that more code in compiling time could improve the runtime speed, which I now witnessed.</p>
+<p>2024-03-25 19:56<br>So the variable in if:&#x2F;else: is local, but the global variable can be used.</p>
+<p>2024-03-25 20:20<br>Now I found the “day” variable wasn’t updated, so I need to solve the scope issue.</p>
+<p>2024-03-25 20:23<br>But the “prefix” variable declared in if : and else : could be used afterwards in the while loop, this is where my confusion came from.</p>
+<p>2024-03-25 20:28<br>Well, now no matter neither the former day nor the later day could not download, so I could download 2551 htmls one day and then be banned.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Use-time-for-if-conditions/" data-id="clumj7gy4001r3kvacoo23wps" data-title="Use time for if conditions" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Fast-and-slow-in-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Fast-and-slow-in-scraping/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T13:15:18.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Fast-and-slow-in-scraping/">Fast and slow in scraping</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 21:15<br>Now I finally handled the scraping speed and made it a new parameter. In the night after I improving the speed of the for loops, my script started to download at ten times faster and the Bandwidth also reached 1Mbps each. Since I planned to scrap slowly but thoroughly, I always tried to keep a low Bandwidth. So I added “time.sleep()” to the code and it threw “AttributeError: ‘datetime.datetime’ object has no attribute ‘sleep’ “.<br>So the lib “time” and “datetime” collaped, I changed time by “import as” and now I reduced the Bandwidth below 1Mbps.<br>Well, I haven’t learned much about Bandwidth of a server. So I just check the Bandwidth when using the application to view, which is just around 4000kbps.<br>And so far I had only been banned with “Max retries exceeded”, so I didn’t know other criteria of banning and just in case.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Fast-and-slow-in-scraping/" data-id="clu5jyd9q0000v0va6e3vbkar" data-title="Fast and slow in scraping" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Checking-404-within-vs-before-the-loop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Checking-404-within-vs-before-the-loop/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T08:05:22.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Checking-404-within-vs-before-the-loop/">Checking 404 within vs before the loop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 16:34<br>When I was modifying my script of scraping streetview, I found when the last iterate’ range become 4-figue numbers, the low speed dragged by the three for loops was magnified. The result was the iterate of requests became very slow at the speed of just 1 request per second.</p>
+<p>This motivated me to improve the checking part of invalid urls. I examinated my code to find I put the if check inside the inner loop, for at first I just focused on the function of passing the invalid urls and then downloading the valid urls.</p>
+<p>2024-03-24 16:48<br>This time I realized maybe the initialization of for loops itself also consumes time, so I put the if 404 check outside of the for loops by just use fixed parameter, for there are tiled images, one fragment’s existance can implicy all the fragments’.<br>And this time, the speed was truly improved by nearly ten times. Now it could post 10 requests per sencond. And the network measure doubled.<br>So I think this proves that the python’s mutiple for loops should contain as less as code as possible, for the 404 check doesn’t engage the iterate but it still slow down the overall speed.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Checking-404-within-vs-before-the-loop/" data-id="clu5aeony0000zcva8vh2fvlz" data-title="Checking 404 within vs before the loop" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Finally-flashed-postmarketOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Finally-flashed-postmarketOS/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T02:34:11.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Finally-flashed-postmarketOS/">Finally flashed postmarketOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 10:34<br>Last time after flashing userdata with postmarketOS image and used “erast system” in a guide, my wt86047 stuck in the postmarketOS logo with “Couldn’t mount root partion”. Then I just used Miflash to flash back to MIUI Android 4.4 and used TWRP to flash to Android 5.1.<br>Today I tried to flash postmarketOS image again and didn’t erase system, then I surprisingly found it successfully booted. I think this should due to I didn’t update to Android 5.1 in the last time. I also searched in xda which said the LineageOS’s firmware is needed, so postmarketOS image doesn’t need this.</p>
+<p>I was also surprised by the UI of sxmo, the only problem is it will flicker three times when unlock the screen. Although my wt86047 is just 1G RAM, it is still more smooth than my Mi4 with Ubuntu Touch, which is hard to type using nano and stuck every time when using the Camera.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Finally-flashed-postmarketOS/" data-id="clu5aeoo30001zcvaf9xf54kf" data-title="Finally flashed postmarketOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Need-an-alarm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/24/Need-an-alarm/" class="article-date">
@@ -338,173 +520,11 @@
 
 
   
-    <article id="post-Windows10-fans-intermittently-accerlate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/22/Windows10-fans-intermittently-accerlate/" class="article-date">
-  <time class="dt-published" datetime="2024-03-22T13:11:49.000Z" itemprop="datePublished">2024-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/22/Windows10-fans-intermittently-accerlate/">Windows10&#39; fans intermittently accerlate</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-22 21:11<br>Today my desktop’s fans became noisy again, this is the first time that the fans kept intermittently accerlating and pausing for a while.<br>I had tried restarting and prohibiting “Diagnostic Policy, Diagnostic Service Host, Diagnostic System Host and Connected User Experiences and Telemetry” in “Services” in the setting, but all no use.<br>And now I am more confused with the setting of Windows.</p>
-<p>2024-03-22 22:13<br>One suspicious point is, in the tasks, there pop up “System”, “Microsoft Network Realtime” and plenty of new processes like “Lenovo Netobook ITS Service”.</p>
-<p>2024-03-22 22:22<br>Well, I think maybe it’s time to find an Anti-virus software.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/Windows10-fans-intermittently-accerlate/" data-id="clu2r9s870002s0vagagiegjp" data-title="Windows10&#39; fans intermittently accerlate" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Weather" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Weather/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T10:09:08.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Weather/">Weather</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Weather/" data-id="clu2r9s7z0000s0va8jvua13q" data-title="Weather" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Foreign-pay-and-housing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Foreign-pay-and-housing/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T07:29:10.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Foreign-pay-and-housing/">Foreign pay and housing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-21 15:29<br>Well, jumping into a foreign country made me confused. It is surprising to find there are so many housing websites and I knew for the first time housing website registing needs fee, which bring another new task of payment in a foreign country. I don’t know why there are so many websites for the same usage and some of them have the same registing api, this needs searching and comparing.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Foreign-pay-and-housing/" data-id="clu0xce470000gsvagc6t44d9" data-title="Foreign pay and housing" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Terminate-nohup-process" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Terminate-nohup-process/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T01:02:18.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Terminate-nohup-process/">Terminate nohup process</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-21 09:02<br>Since I changed my scripts, I need to terminate the nohup process to change the scripts in ECS. Well I haven’t learned about process and ps command, after seaching I used “ ps -aux|grep “ and “kill -9 “. After terminating one process, another process threw “kill: (1215933): No such process” and the id number changed every time, also the CPU monitor didn’t change.</p>
-<p>2024-03-21 09:14<br>Now I know “1223340 pts&#x2F;3    S+     0:00 grep –color&#x3D;auto” represents the process has been terminated.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Terminate-nohup-process/" data-id="clu0jlis40002u0va7lme0nz8" data-title="Terminate nohup process" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -550,23 +570,23 @@
       <ul>
         
           <li>
+            <a href="/2024/05/05/Vera-Rubin/">Vera Rubin</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/05/Before-changing-timezone/">Before changing timezone</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/A-glance-at-Quantum-computer/">A glance at Quantum computer</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/04/Secondhand-jacket-with-musty-smell/">Secondhand jacket with musty smell</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/03/Use-Cloud-Drive/">Use Cloud Drive for temporary use</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/03/Copy-GBs-small-files-via-adb/">Copy GBs small files via adb</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Clone-HDDs-with-laptop/">Clone HDDs with laptop</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/02/Mass-and-information/">Mass and information</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/01/Is-it-deterministic/">Is it deterministic?</a>
           </li>
         
       </ul>
