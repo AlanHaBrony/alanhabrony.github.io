@@ -69,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Use-time-for-if-conditions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-cancro-totally-brick" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/24/Use-time-for-if-conditions/" class="article-date">
-  <time class="dt-published" datetime="2024-03-24T14:22:54.000Z" itemprop="datePublished">2024-03-24</time>
+    <a href="/2024/03/28/cancro-totally-brick/" class="article-date">
+  <time class="dt-published" datetime="2024-03-28T07:57:35.000Z" itemprop="datePublished">2024-03-28</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/24/Use-time-for-if-conditions/">Use time for if conditions</a>
+      <a class="p-name article-title" href="/2024/03/28/cancro-totally-brick/">cancro totally brick</a>
     </h1>
   
 
@@ -91,31 +91,121 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-24 22:22<br>Since tonight is quite and smooth, I examinated my html script again. I found I just added the start timer “time0&#x3D;0” at the beginning, this caused after<br>if((time.time()-time0) &gt; thres):<br>    date&#x3D;date+1<br>    continue<br>the “(time.time()-time0) &gt; thres” will always be True since I didn’t update the time0. So I changed the code<br> if((time.time()-time0) &gt; thres):<br>     date&#x3D;date+1<br>     time0&#x3D;time.time()<br>     continue<br>to make time0 follow up the time.time()</p>
-<p>2024-03-24 22:31<br>And I found I also didn’t download the correct url after the timer chcek, for the iterate was used before the if sentence.</p>
-<p>2024-03-24 22:34<br>Now I know when the if condition is not satisfied, the iterate just keeps running and therefore when day+1, the first number of this day has already passed. However, due to the discontinuity, I still couldn’t use 404 to make day+1. So I think I should record the first 404 number, for it mostly is the first number of the next day.</p>
-<p>2024-03-24 22:40<br>But how could I used the recorded number to restart iterate, so for loop is not suitable.</p>
-<p>2024-03-24 22:52<br>So there are retracing of iterator and recursion when adjacent 404 occurs, which makes the algorithm a bit complex.</p>
-<p>2024-03-25 9:42<br>Weird, I put the recursion funtcion in the while loop but it only executed once and then stuck. And when I changed while loop by for loop, it could download for one day, so the problem is in the iterator.</p>
-<p>2024-03-25 9:48<br>Oh, this is because I set the initial variables before the recursion function, so I need to use “global” modifier.<br>Now it threw:<br> global time0&#x3D;time.time()<br>                ^<br>SyntaxError: invalid syntax</p>
-<p>2024-03-25 11:12<br>So “global” is used as<br>“global time0<br> time0&#x3D;time.time()”<br>And global variabes cannot be parameters.</p>
-<p>2024-03-25 11:15<br>And now I realized the error “Max retries exceeded with url:” doesn’t only mean it is banned.<br>I will try add “<br>requests.adapters.DEFAULT_RETRIES &#x3D; 5” and “keep_alive &#x3D; False”.</p>
-<p>2024-03-25 19:10<br>Now I found maybe my recursion was duplicate, for the recursion and while loop having the same function of start+&#x3D;1 to iterate. After “day+1”, the iterater &#x3D; record which was the first 404 iterate number and it should be the first number of the next day. So I replaced the recursion with checking 200 and downloading, since as long as day+1 , the while loop could continue.</p>
-<p>And I am not sure about my “record&#x3D; iterator-1” and iterator&#x3D;record”. After reviewing the function of “&#x3D;”, I think I should use copy.deepcopy since I want to pass the int value, but it still could only download one day and I feel weird about this.</p>
-<p>2024-03-25 19:22<br>After examinating the code again, I put “start+&#x3D;1” out of the download function, also for simplify the code. But it still did not work.</p>
-<p>2024-03-25 19:28<br>Now I simplified the second if condition by removing the block with no execution, and I still did not clear about the usage of global. I declared the global iterator variable in the main funcion but it still threw error in the download function<br>“UnboundLocalError: local variable referenced before assignment”</p>
-<p>2024-03-25 19:33<br>So “global “ is used in the function after declare the variable before the function.</p>
-<p>2024-03-25 19:40<br>Now Im confused whether if : also limits the variables to its scope since {} in C does this, and I actually just need to change the variable declared outside the function but not outside all the functions. After a second thought, now I do not need recursion so I also don’t need to use two functions.</p>
-<p>2024-03-25 19:47<br>Now I merged the two functions and remembered that I learned that more code in compiling time could improve the runtime speed, which I now witnessed.</p>
-<p>2024-03-25 19:56<br>So the variable in if:&#x2F;else: is local, but the global variable can be used.</p>
-<p>2024-03-25 20:20<br>Now I found the “day” variable wasn’t updated, so I need to solve the scope issue.</p>
-<p>2024-03-25 20:23<br>But the “prefix” variable declared in if : and else : could be used afterwards in the while loop, this is where my confusion came from.</p>
-<p>2024-03-25 20:28<br>Well, now no matter neither the former day nor the later day could not download, so I could download 2551 htmls one day and then be banned.</p>
+        <p>2024-03-28 15:57<br>I am very confused because I have never saw the situation like this before.<br>I used Miflash with 9008 mode several times to flash a MIUI firmware. Then I flashed TWRP and LineageOS but WiFi only displayed “saved” without network. So today I firstly use TWRP to flash another ROM, wich resulted in stuck at logo. So I use Miflash with fastboot mode to flash MIUI but wiith ending error and then I powered off to find it totally brick, with no response to buttoms or charging.<br>So now I could only try to charge it for a while. I think maybe this several-hand device has some problems, and I no nothing about fixing devices.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/Use-time-for-if-conditions/" data-id="clumj7gy4001r3kvacoo23wps" data-title="Use time for if conditions" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/28/cancro-totally-brick/" data-id="clumj7gy5001t3kva0gi9evqb" data-title="cancro totally brick" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tablets-with-EMR" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/28/Tablets-with-EMR/" class="article-date">
+  <time class="dt-published" datetime="2024-03-28T06:37:18.000Z" itemprop="datePublished">2024-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/28/Tablets-with-EMR/">Tablets with EMR</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-28 14:51<br>Since rencently I need a monitor for Mini PC and I want a Windows tablet with newer EMR. I decide to search through this today, for I still haven’t fonud out the EMR details of my cp713. I currently don’t want to use software to test because I need to know before purchasing a new tablet. When I bought my cp713, I just searched to use the product year to roughly guess the emr version. Now the manuals of Fujitsu motivates me to search more.</p>
+<p>2024-03-28 15:03<br>It is weird so far I only saw the specific description of “2048 level” in Fujitsu Q508.</p>
+<p>2024-03-28 15:08<br>Q704 is specified with “Active stylus” while others are just “Stylus”.</p>
+<p>2024-03-28 15:29<br>Q584 is also specified with “Active stylus” while others are just “Stylus”.</p>
+<p>2024-03-28 16:40<br><a target="_blank" rel="noopener" href="https://www.staedtler.com/fileadmin/user_upload/Product/PDF/Compatibility_Noris_digital.pdf">https://www.staedtler.com/fileadmin/user_upload/Product/PDF/Compatibility_Noris_digital.pdf</a><br>A list of devices with EMR but not detailed.</p>
+<p>2024-03-28 16:50<br><a target="_blank" rel="noopener" href="https://www.tabletsforartists.com/wacom-emr/">https://www.tabletsforartists.com/wacom-emr/</a><br>This post is in detail but with only a few devices. I think maybe I should check a Japanese review.</p>
+<p>2024-03-28 17:04<br><a target="_blank" rel="noopener" href="https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q7312.pdf">https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q7312.pdf</a><br>So Q7312 changed to Active stylus.<br><a target="_blank" rel="noopener" href="https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q739.pdf">https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q739.pdf</a><br>It seems Q73X has all changed to Active stylus since at least Q739. Oh, this helps me to reduce the budget.</p>
+<p>2024-03-28 17:09<br><a target="_blank" rel="noopener" href="https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q737.pdf">https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q737.pdf</a><br>(I wonder why when the code number parameter below 738 it requires login.)</p>
+<p>2024-03-28 17:32<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/stylistic/q5011nb/spec.html">https://jp.fujitsu.com/platform/pc/product/stylistic/q5011nb/spec.html</a><br>So Q5011 could have emr supported.</p>
+<p>2024-03-28 18:34<br><a target="_blank" rel="noopener" href="https://cdn.cnetcontent.com/20/b4/20b48207-c3df-43d9-9dd6-c6d5f4d03875.pdf">https://cdn.cnetcontent.com/20/b4/20b48207-c3df-43d9-9dd6-c6d5f4d03875.pdf</a><br>There is “active pen support”  in Q5010 so it is also Active stylus.</p>
+<p>2024-03-28 18:42<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/arrowstab/1901/q50ve/spec.html">https://jp.fujitsu.com/platform/pc/product/arrowstab/1901/q50ve/spec.html</a><br>So this Q509ve uses emr.</p>
+<p>2024-03-28 18:45<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/arrowstab/2001/q5010cb/spec.html">https://jp.fujitsu.com/platform/pc/product/arrowstab/2001/q5010cb/spec.html</a><br>But it says Q5010cb is also 電磁誘導方式.</p>
+<p>2024-03-28 18:52<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/arrowstab/column/Touchpanel_tab/">https://jp.fujitsu.com/platform/pc/product/arrowstab/column/Touchpanel_tab/</a><br>So now it is certain that Q7312 uses AES and so Q5011 supports EMR.</p>
+<p>2024-03-28 18:52<br><a target="_blank" rel="noopener" href="https://www.fujitsu.com/emeia/about/resources/news/press-releases/2020/emeai-20200929-new-fujitsu-stylistic-q5010-tablet-is-the.html">https://www.fujitsu.com/emeia/about/resources/news/press-releases/2020/emeai-20200929-new-fujitsu-stylistic-q5010-tablet-is-the.html</a><br>OH, so Q5011 also uses Wacom EMR with 4k pressure levels.</p>
+<p>2024-03-28 19:03<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/arrowstab/1905/q739a-pv/spec.html">https://jp.fujitsu.com/platform/pc/product/arrowstab/1905/q739a-pv/spec.html</a><br>Q738, Q739, Q7310 and Q7311 use AES while Q737 uses EMR. So Q73XX changed to AES since Q738. And all the Q50XX use EMR. Finally checked.</p>
+<p>2024-03-28 19:11<br>Next is the trade-off of performance and price, almost forget the HDMI support.</p>
+<p>2024-03-28 19:17<br>There are Q737 i5-7300U 4G&#x2F;8G, Q509 N4000 4G, Q508 X5-Z8500 4G, Q5010 N4000 4G, V727 m3-7Y30 8G, P727 i5-7300 4G&#x2F;8G&#x2F;16G and R726 i5-6300 4G avaliable, well, plenty of choices.</p>
+<p>2024-03-28 19:17<br><a target="_blank" rel="noopener" href="https://jp.fujitsu.com/platform/pc/product/arrowstab/former/">https://jp.fujitsu.com/platform/pc/product/arrowstab/former/</a><br>Firstly, it is easy to drop two choices (I want to use “elements” for “drop”) with this list, for R727 and V727 use AES.</p>
+<p>2024-03-28 19:36<br>Then P727 is a little tricky, for there is a notice “* Only specific LIFEBOOK P727 can support stylus pen” in <a target="_blank" rel="noopener" href="https://www.fujitsu.com/downloads/COMP/fpcap/fsdm/Fujitsu%20LIFEBOOK%20P727%20User%20Manual%20EN.pdf">https://www.fujitsu.com/downloads/COMP/fpcap/fsdm/Fujitsu%20LIFEBOOK%20P727%20User%20Manual%20EN.pdf</a></p>
+<p>2024-03-28 19:42<br><a target="_blank" rel="noopener" href="https://mobilemeit.com/store/Fujitsu-P727-P728-and-U729X-Extra-Stylus-Pen-p96209614">https://mobilemeit.com/store/Fujitsu-P727-P728-and-U729X-Extra-Stylus-Pen-p96209614</a><br>So the P727 element is also droppedd, which makes the Q737 the only one with best hardwares.</p>
+<p>2024-03-28 19:43<br>So now check the HDMI support, screen and EMR levels.</p>
+<p>2024-03-28 19:46<br><a target="_blank" rel="noopener" href="https://extranet.ts.fujitsu.com/logon/LogonPoint/tmindex.html">https://extranet.ts.fujitsu.com/logon/LogonPoint/tmindex.html</a><br>By the way, Fujitsu’s logo and wallpaper are beautiful.</p>
+<p>2024-03-28 19:57<br>Well, I was just asked my local (and maybe the only available) seller only has 8G version Q737 without stylus support.</p>
+<p>2024-03-28 20:10<br>Well, the seller told me he could update a 4G Q737 with stylus to 8G, kinda wired for I haveb’t serached about the fixing details of Q737.<br>And another suspicious thing is the Q737 in sale is 4G&#x2F;8G DDR3, while the Fujitsu’s Data Sheet is 8G&#x2F;16G DDR4.</p>
+<p>2024-03-28 20:22<br>I have searched Amazon to find no Q737 available. And in ebay, there are only 4G RAM Q737s which are more expensive. One post specified RAM not able to replace, which makes me a little confused.<br>By the way, in around 2020 I happened to saw Starlight Rocket with a much more lower price, now its price has been incredible. Anyway, I think it’s a good thing, for it is the represition of fans’ love.<br><a target="_blank" rel="noopener" href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=Trixie+Lulamoon+&+Starlight+Glimmer+&_sacat=0">https://www.ebay.com/sch/i.html?_from=R40&amp;_nkw=Trixie+Lulamoon+%26+Starlight+Glimmer+&amp;_sacat=0</a></p>
+<p>2024-03-28 20:27<br>Now I still haven’t searched out the EMR pressure levels of Q737. I think gussing by year is a temporary solution.</p>
+<p>2024-03-28 20:30<br><a target="_blank" rel="noopener" href="https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q738-fr.pdf">https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q738-fr.pdf</a><br><a target="_blank" rel="noopener" href="https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q739.pdf">https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-STYLISTIC-Q739.pdf</a><br>Well, looks Fujitsu began to specific pressure levels just from Q738, so they updated EMR to AES with 4k pressure levels.<br>Using the parallel Q50X, for Fujitsu’s Cradle often support both Q73X and Q50X in the same year, I think I can make a second guess.</p>
+<p>2024-03-28 20:36<br>So Q737 is 2017-2018, using Q508 to refer</p>
+<p>2024-03-28 22:53<br>(Doing homework)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/28/Tablets-with-EMR/" data-id="clumj7gy2001m3kva2jg2cuon" data-title="Tablets with EMR" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Devices-Allocation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/28/Devices-Allocation/" class="article-date">
+  <time class="dt-published" datetime="2024-03-28T01:36:44.000Z" itemprop="datePublished">2024-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/28/Devices-Allocation/">Devices Allocation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/28/Devices-Allocation/" data-id="clumj7gxn000a3kva23dve5yo" data-title="Devices Allocation" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -127,10 +217,10 @@
 
 
   
-    <article id="post-Fast-and-slow-in-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Holiday-and-courses" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/24/Fast-and-slow-in-scraping/" class="article-date">
-  <time class="dt-published" datetime="2024-03-24T13:15:18.000Z" itemprop="datePublished">2024-03-24</time>
+    <a href="/2024/03/27/Holiday-and-courses/" class="article-date">
+  <time class="dt-published" datetime="2024-03-27T03:01:06.000Z" itemprop="datePublished">2024-03-27</time>
 </a>
     
   </div>
@@ -141,7 +231,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/24/Fast-and-slow-in-scraping/">Fast and slow in scraping</a>
+      <a class="p-name article-title" href="/2024/03/27/Holiday-and-courses/">Holiday and courses</a>
     </h1>
   
 
@@ -149,12 +239,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-24 21:15<br>Now I finally handled the scraping speed and made it a new parameter. In the night after I improving the speed of the for loops, my script started to download at ten times faster and the Bandwidth also reached 1Mbps each. Since I planned to scrap slowly but thoroughly, I always tried to keep a low Bandwidth. So I added “time.sleep()” to the code and it threw “AttributeError: ‘datetime.datetime’ object has no attribute ‘sleep’ “.<br>So the lib “time” and “datetime” collaped, I changed time by “import as” and now I reduced the Bandwidth below 1Mbps.<br>Well, I haven’t learned much about Bandwidth of a server. So I just check the Bandwidth when using the application to view, which is just around 4000kbps.<br>And so far I had only been banned with “Max retries exceeded”, so I didn’t know other criteria of banning and just in case.</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/Fast-and-slow-in-scraping/" data-id="clu5jyd9q0000v0va6e3vbkar" data-title="Fast and slow in scraping" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/27/Holiday-and-courses/" data-id="clumj7gxu000p3kva8tfyg0js" data-title="Holiday and courses" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -166,10 +255,10 @@
 
 
   
-    <article id="post-Checking-404-within-vs-before-the-loop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Choosing-an-old-tablet" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/24/Checking-404-within-vs-before-the-loop/" class="article-date">
-  <time class="dt-published" datetime="2024-03-24T08:05:22.000Z" itemprop="datePublished">2024-03-24</time>
+    <a href="/2024/03/27/Choosing-an-old-tablet/" class="article-date">
+  <time class="dt-published" datetime="2024-03-26T23:50:13.000Z" itemprop="datePublished">2024-03-27</time>
 </a>
     
   </div>
@@ -180,7 +269,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/24/Checking-404-within-vs-before-the-loop/">Checking 404 within vs before the loop</a>
+      <a class="p-name article-title" href="/2024/03/27/Choosing-an-old-tablet/">Choosing an old tablet</a>
     </h1>
   
 
@@ -188,18 +277,39 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-24 16:34<br>When I was modifying my script of scraping streetview, I found when the last iterate’ range become 4-figue numbers, the low speed dragged by the three for loops was magnified. The result was the iterate of requests became very slow at the speed of just 1 request per second.</p>
-<p>This motivated me to improve the checking part of invalid urls. I examinated my code to find I put the if check inside the inner loop, for at first I just focused on the function of passing the invalid urls and then downloading the valid urls.</p>
-<p>2024-03-24 16:48<br>This time I realized maybe the initialization of for loops itself also consumes time, so I put the if 404 check outside of the for loops by just use fixed parameter, for there are tiled images, one fragment’s existance can implicy all the fragments’.<br>And this time, the speed was truly improved by nearly ten times. Now it could post 10 requests per sencond. And the network measure doubled.<br>So I think this proves that the python’s mutiple for loops should contain as less as code as possible, for the 404 check doesn’t engage the iterate but it still slow down the overall speed.</p>
+        <p>2024-03-27 08:34<br>Well, rencently I will sometimes need to bring a device to show slides. Since I still haven’t fix my laptop’s fans and the unknown process. I think a tablet will help. In fact, I already have a tablet, but it is RLCD without color.<br>So I searched in the Internet market to find Toshiba wt8, Toshiba wt10 and iPad 3.<br>Well, I just need a screen with color so I will choose a cheap one. But then I thought why not use linux. So I seached to check the linux support of these.</p>
+<p>2024-03-27 08:49<br><a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Toshiba-WT8-B-102-Tablet-Review.124034.0.html">https://www.notebookcheck.net/Toshiba-WT8-B-102-Tablet-Review.124034.0.html</a><br>I would need a HDMI port to use the tablet as a monitor sometimes for my Mini PC. So Toshiba WT8-B doesn’t have HDMI.</p>
+<p>2024-03-27 09:03<br><a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Toshiba-Encore-2-10-1-inch.121998.0.html">https://www.notebookcheck.net/Toshiba-Encore-2-10-1-inch.121998.0.html</a><br>Toshiba WT10-A’ specs looks fine but I didn’t find linux support yet. And I was surprised to find the Surface RT I just saw in 7:20 had already been sold.</p>
+<p>2024-03-27 09:47<br>So now I only found complete guide of installing linux in Surface RT with Golden Keys &amp; Yahallo. Well the Nvidia Tegra 3 looks weaker than Z3735.</p>
+<p>2024-03-27 09:59<br><a target="_blank" rel="noopener" href="https://github.com/linux-surface/linux-surface">https://github.com/linux-surface/linux-surface</a><br>I didn’t find wthether Surface 2 is supported.</p>
+<p>2024-03-27 12:46<br>I also searched about Fujitsu, since I have already searched about its devices for Wacom emr.<br>So it seems Q506 is fine with linux, while Q584 seems to have driver problems.<br><a target="_blank" rel="noopener" href="https://haruka0000.hatenablog.com/entry/2019/07/19/012814">https://haruka0000.hatenablog.com/entry/2019/07/19/012814</a><br><a target="_blank" rel="noopener" href="https://www.shumi-gatari-blog.com/%e3%80%90linux%e3%80%91arrows-tab-q584-h%e3%81%abdebian12%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab/1851/">https://www.shumi-gatari-blog.com/%e3%80%90linux%e3%80%91arrows-tab-q584-h%e3%81%abdebian12%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab/1851/</a></p>
+<p>2024-03-27 12:54<br><a target="_blank" rel="noopener" href="https://qiita.com/basictomonokai/items/4bd77df086af79942518">https://qiita.com/basictomonokai/items/4bd77df086af79942518</a><br>So Q506 is also fine.</p>
+<p>2024-03-27 13:22<br><a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/linux-hardware-18/is-fujitsu-notebook-linux-friendly-4175609493/">https://www.linuxquestions.org/questions/linux-hardware-18/is-fujitsu-notebook-linux-friendly-4175609493/</a><br>More discussion and I also learned a new phase “out of the box”. <a target="_blank" rel="noopener" href="https://english.stackexchange.com/questions/44401/out-of-the-box-when-should-i-use-this-phrase">https://english.stackexchange.com/questions/44401/out-of-the-box-when-should-i-use-this-phrase</a></p>
+<p>2024-03-27 13:34<br>Q702 has i5-3427U which is close to 3855U.</p>
+<p>2024-03-27 13:39<br>I searched to find Q702 with lines in screen is due to the high temperature.<br>And Q702 only supports active stylus.</p>
+<p>2024-03-27 13:48<br>So little green lines in the screen seems not big problem.</p>
+<p>2024-03-28 06:36<br>Well, yesterday I gradually searched into Wacom devices and the comparision of 4G RAM i5 Q704 and mutiple versions of Toshiba z20t, for I always want a Wacom device with better screen and enough for drawing.<br>After considerision again, I still have cp713 to draw, now I need is a screen with color which could connect to my Mini PC. I don’t know whether devices with HDMI in are all okay, for my RLCD tablet only supports 1920x1080 or 1080x720.</p>
+<p>2024-03-28 07:14<br><a target="_blank" rel="noopener" href="https://laptopmedia.com/review/toshiba-portege-z20t-the-powerful-convertible-you-were-looking-for/">https://laptopmedia.com/review/toshiba-portege-z20t-the-powerful-convertible-you-were-looking-for/</a><br>Well, the descriptions of screen and heat are kinda scary.</p>
+<p>2024-03-28 07:48<br>So bamboo ink is for MPP and AES, emr is said to be better.</p>
+<p>2024-03-28 08:24<br>HP elite x2 1011 g1’ CPU performance seems good, and elite x2 1012 has linux support, but they all just have typec other than HDMI.</p>
+<p>2024-03-28 12:00<br>Well, when I search for laptops, I will always gradually search about Wacom emr devices. Now again I am sure about the better device than cp713, like Acer Switch7, is out of my budget. So I now have Fujistu Q506, Fujistu Q616, Thinkpad and some Acer laptops to choose.<br>And I found a emr support chart of Acer: <a target="_blank" rel="noopener" href="https://community.acer.com/en/kb/articles/8291-active-stylus-compatibility-chart-for-notebooks">https://community.acer.com/en/kb/articles/8291-active-stylus-compatibility-chart-for-notebooks</a></p>
+<p>2024-03-28 13:00<br>So Thinkpad helix 2015 is just 512 level, and Fujitsu U93X seems without emr support.<a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Fujitsu-LifeBook-U938-i5-8250U-LTE-SSD-FHD-Subnotebook-Review.315572.0.html">https://www.notebookcheck.net/Fujitsu-LifeBook-U938-i5-8250U-LTE-SSD-FHD-Subnotebook-Review.315572.0.html</a></p>
+<p>2024-03-28 13:04<br>So Fujitsu Q508 is a newer device, Fujitsu’s name encoding is interesting, sepearte figure for different meaning, well the middle figure’ meaning I don’t know yet.</p>
+<p>2024-03-28 13:12<br><a target="_blank" rel="noopener" href="https://www.manua.ls/fujitsu/stylistic-q508/manual?p=85">https://www.manua.ls/fujitsu/stylistic-q508/manual?p=85</a><br>So Fujitsu Q508 is with newer emr.<br><a target="_blank" rel="noopener" href="https://www.manua.ls/fujitsu/stylistic-q584/manual?p=80">https://www.manua.ls/fujitsu/stylistic-q584/manual?p=80</a><br>And so Q584 is just Active stylus, well manuals are useful.</p>
+<p>2024-03-28 13:26<br><a target="_blank" rel="noopener" href="https://webdownloads5.ts.fujitsu.com/download/FileDownload/fileDownload.aspx?SoftwareGUID=2DAFF503-7477-4696-9072-6D9AB76F9E19&FileFolder=Downloadfiles&FileTypeExtension=PDF&FileNameClient=FTS_STYLISTICQ736OperatingManual_032015_1157497.PDF&Token=RUtARkBFQ0VHQElARUMtLw==">https://webdownloads5.ts.fujitsu.com/download/FileDownload/fileDownload.aspx?SoftwareGUID=2DAFF503-7477-4696-9072-6D9AB76F9E19&amp;FileFolder=Downloadfiles&amp;FileTypeExtension=PDF&amp;FileNameClient=FTS_STYLISTICQ736OperatingManual_032015_1157497.PDF&amp;Token=RUtARkBFQ0VHQElARUMtLw==</a><br>Well, the emr level of Q736 is not specified.</p>
+<p>2024-03-28 13:36<br>Wierd, Q738 and T936 are all without specfic level numbers.</p>
+<p>2024-03-28 13:40<br>Q555 is also just with “Stylus”.</p>
+<p>2024-03-28 13:47<br>Some new devices <a target="_blank" rel="noopener" href="https://digichasers.com/wacom-emr-tablet-list/#:~:text=Best%20Wacom%20EMR%20Tablets%20Today%201%201.%20Samsung,13.3%20%E2%80%93%20The%20Best%20EMR%20Tablet%20Right%20Now">https://digichasers.com/wacom-emr-tablet-list/#:~:text=Best%20Wacom%20EMR%20Tablets%20Today%201%201.%20Samsung,13.3%20%E2%80%93%20The%20Best%20EMR%20Tablet%20Right%20Now</a></p>
+<p>2024-03-28 14:03<br><a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Samsung-Galaxy-Book-12-LTE-Convertible-Review.244224.0.html">https://www.notebookcheck.net/Samsung-Galaxy-Book-12-LTE-Convertible-Review.244224.0.html</a><br>Galaxybook12 has 4096 level but I don’t like the screen.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/Checking-404-within-vs-before-the-loop/" data-id="clu5aeony0000zcva8vh2fvlz" data-title="Checking 404 within vs before the loop" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/27/Choosing-an-old-tablet/" data-id="clumj7gxk00043kvaa1hi0k6m" data-title="Choosing an old tablet" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
 
     </footer>
   </div>
@@ -209,10 +319,10 @@
 
 
   
-    <article id="post-Finally-flashed-postmarketOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Choosing-Mini-PC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/24/Finally-flashed-postmarketOS/" class="article-date">
-  <time class="dt-published" datetime="2024-03-24T02:34:11.000Z" itemprop="datePublished">2024-03-24</time>
+    <a href="/2024/03/26/Choosing-Mini-PC/" class="article-date">
+  <time class="dt-published" datetime="2024-03-26T06:23:03.000Z" itemprop="datePublished">2024-03-26</time>
 </a>
     
   </div>
@@ -223,7 +333,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/24/Finally-flashed-postmarketOS/">Finally flashed postmarketOS</a>
+      <a class="p-name article-title" href="/2024/03/26/Choosing-Mini-PC/">Choosing Mini PC</a>
     </h1>
   
 
@@ -231,17 +341,28 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-24 10:34<br>Last time after flashing userdata with postmarketOS image and used “erast system” in a guide, my wt86047 stuck in the postmarketOS logo with “Couldn’t mount root partion”. Then I just used Miflash to flash back to MIUI Android 4.4 and used TWRP to flash to Android 5.1.<br>Today I tried to flash postmarketOS image again and didn’t erase system, then I surprisingly found it successfully booted. I think this should due to I didn’t update to Android 5.1 in the last time. I also searched in xda which said the LineageOS’s firmware is needed, so postmarketOS image doesn’t need this.</p>
-<p>I was also surprised by the UI of sxmo, the only problem is it will flicker three times when unlock the screen. Although my wt86047 is just 1G RAM, it is still more smooth than my Mi4 with Ubuntu Touch, which is hard to type using nano and stuck every time when using the Camera.</p>
+        <p>2024-03-26 14:23<br>Today time is poor and my will need to bring my laptop around. So I decided to choose and buy a mini PC today.<br>In the beginning, I searched in the shopping website and there are all new CPUs with high price which are wasted for just scraping. Then I searched to find CPUs: J1900, J1800, 29550, J3XX and N5095 are more suitable.<br>So I changed to old devices. </p>
+<ol>
+<li>Chromeboxes with 2955u<br> These devices are cheap and just enough for linux to running scripts.</li>
+<li>Industrial PC of small manufacturers<br> These devices are lack of information and the hardwares are probably under poor conditions.</li>
+</ol>
+<p>I don’t need new CPUs, but I do need enough storage since the daily storage usage could reach 6G. So I only looked at devices with at least 512G storage. I also need portability and I had no idea about the size of cases, so I used my laptop’s size as comparision to decide around 180mm*180mm is suitable. </p>
+<ol start="3">
+<li>HP ProDesk 400 G2<br>I found HP Mini PCs have a big community and some helpful guides. And now I found the type like HP Mini PC with SATA are just the device I need. But I have never used 2.5-inch HDD before and I searched to find its quality seemed not good. Well, this also reminded me of searching more about HDDs. And after searchong about ST500LM021-1KJ152 , which was said to be CMR and with good reputation, I just found there was one on sale with a low price.<br>So now I had solved the requirement of storage.</li>
+</ol>
+<p>2024-03-26 14:59<br>However, the CPUs of HP ProDesk are all with higher TDP than J1900 and N5095 and the matherboards are old for the new CPUs.</p>
+<p>2024-03-26 15:20<br>So now I came back to the low TDP CPUs but the choice 2 had the most devices on sale. I again need to search about the specs.</p>
+<p>2024-03-26 18:39<br>After searching the comparision between J1900, J3345, N3150 and 3855U, I think 3855U is the best among these. And there is just a 3855U device handcrafted without brand but supported SATA at a appealing price. I know CPU normally won’t broke. So I bought this 3855U Mini (relatively with its 180*200 size) PC.</p>
+<p>2024-03-27 08:20<br>So now what I need to do is to prepare the (Im not sure the about which word) installation of the HDD and linux system.<br>“Install vs Mount”: <a target="_blank" rel="noopener" href="https://hinative.com/questions/15919701">https://hinative.com/questions/15919701</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/Finally-flashed-postmarketOS/" data-id="clu5aeoo30001zcvaf9xf54kf" data-title="Finally flashed postmarketOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/26/Choosing-Mini-PC/" data-id="clumj7gxc00023kvaadq1aeki" data-title="Choosing Mini PC" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li></ul>
 
     </footer>
   </div>
@@ -251,10 +372,10 @@
 
 
   
-    <article id="post-Need-an-alarm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-English-writing-assistance-tools" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/24/Need-an-alarm/" class="article-date">
-  <time class="dt-published" datetime="2024-03-23T23:15:47.000Z" itemprop="datePublished">2024-03-24</time>
+    <a href="/2024/03/26/English-writing-assistance-tools/" class="article-date">
+  <time class="dt-published" datetime="2024-03-26T04:12:54.000Z" itemprop="datePublished">2024-03-26</time>
 </a>
     
   </div>
@@ -265,7 +386,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/24/Need-an-alarm/">Need an alarm</a>
+      <a class="p-name article-title" href="/2024/03/26/English-writing-assistance-tools/">English writing assistance tools</a>
     </h1>
   
 
@@ -273,203 +394,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-24 07:15<br>Ah, today I woke up late twenty minutes and my desktop had been cleared out of the room. So now I need an alarm, though normally I don’t have a quite morning. And I also need to set my desktop alive when closed.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/Need-an-alarm/" data-id="clu4pzjlo0000scva9qzp7x4r" data-title="Need an alarm" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Scrap-htmls-with-discontinuous-counting-number-thoroughly" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/" class="article-date">
-  <time class="dt-published" datetime="2024-03-23T13:16:38.000Z" itemprop="datePublished">2024-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/">Scrap htmls with discontinuous counting number thoroughly</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-23 21:16<br>Two weeks ago I wrote a script to scrap news data in web page by just downloading html files, since the urls are named easily in the form “<a target="_blank" rel="noopener" href="http://www.domain.com/news/content/YYYYMMdd/%7B6-figure">www.domain.com/news/content/YYYYMMdd/{6-figure</a> number of the total number of the htmls} “.<br>So at the beginning I wanted to iterate all the days and break when this “thisday&#x2F;nextnumber” response is not 200. But then I found the numbers had discontinuity, which is randomly distributed so I couldn’t just use break.<br>Secondly, I found the amount of news of a day was not evenly distributed. There were more news in holidays and even no news in some day. I didn’t know how to estimate the performance of random method by trying to find a number within a day.<br>So now to make sure to scrap thoroughly, I just iterate numbers for each day with a n^{2} complexity. It is fine except the server will disconnect intermittently.<br>I think this is like a question of Algorithm, but with the difficulty of real conditions. Now I haven’t came up with better method.</p>
-<p>2024-03-23 22:38<br>AH! Now I see, observing the downloading process again, I found when the number is out of the current day, there will be a long pause of downloading. So I could record the pause and set one minute as threshold to day+1.<br>And for the complete scraping, I realize adding a second check of the missing numbers will be useful.</p>
-<p>2024-03-23 22:45<br>Well, again I forgot I thought about this two weeks ago and found there were only “time.perf_counter()” examples for a complete code. While my requests is to check the time within the for loop.</p>
-<p>2024-03-23 22:49<br>Now I found time.time() to get the system.</p>
-<p>2024-03-23 22:58<br>This is the added code:<br> start&#x3D; time.time()<br> if(time.time()-start &gt; 60):<br>     date&#x3D;date+1<br>     continue</p>
-<p>2024-03-24 9:13<br>Now I learned time.perf_counter() is also global, but I think it’s faster than seconds. So I will still use time.time(), but it seems now my ip has been banned again.</p>
-<p>2024-03-24 9:27<br>But now the script just finished in a few minutes without any downloading. I have tested “if ((time.time()-start) &gt;60):” is right (I just fonud I mixed the JAVA’s if() syntax).<br>The most time-consuming part of my script is iterate the numbers out of the current day, so the time window I need to measure starts from a valid url, which is the last valid iterater. So I think the start time should in the else:, but I need to check the scope of variables in else:.</p>
-<p>2024-03-24 9:42<br>So the variable declared in else: is local. And the time measure is set after the last response 200, I think should fix the code.</p>
-<p>2024-03-24 13:08<br>Having a second thought, with the afterward check of the missing numbers, I could just make day+1 when response is 404.<br>2024-03-24 13:14<br>The tricky part is to make sure the numbers of the current day have already been iterated, so if day+1 when 404 but the numbers are still in the last day, it will need to jump back with day-1.</p>
-<p>But I found in some days, there are nearly 100 missing numbers, which will need plenty of flips.<br>So now I still have no better method than iterate all or timer.</p>
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/" data-id="clu46ccor0001l8va47dna6l7" data-title="Scrap htmls with discontinuous counting number thoroughly" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Mini-PC-for-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/23/Mini-PC-for-scraping/" class="article-date">
-  <time class="dt-published" datetime="2024-03-23T11:16:20.000Z" itemprop="datePublished">2024-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/23/Mini-PC-for-scraping/">Mini PC for scraping</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-23 22:13<br>Conclusion: I just saw the ECS has discont and therefore cheaper than Mini PC. So for now I will use more ECS.</p>
-<p>2024-03-23 19:26<br>Till now I just have my Windows desktop and a 2-core ECS with Ubuntu running scraping scripts. I need to keep my desktop charging and without power off for a 24h scraping. But sometimes I may need to take my desktop, so I started to look for a Mini PC for scraping.<br>I want to use just GNU and not to wast the price. I don’t know whether 2-core machines are enough, the storage surely should above 40G and larger is better. So I firstly searched about N100, N5095, J4125, etc. Most posts are about router but I dont’t need WANs and LANs. Then I saw a Mini PC with N5095, 16G RAM and 512G storage.<br>However, after a second thought, I found with the same price, I could buy 3-4 2-core Chromeboxes. So I searched about linux hardware specs again.</p>
-<p>2024-03-23 19:44<br>My requirement is just running python scripts and I need to check the scraped images. I haven’t learned about VM. I just had one linux device, cp713 with 8G RAM and i5-8250U, which will have fans noisy when running kvm or krita but okay with python and Chrome.</p>
-<p>2024-03-23 19:51<br>So linux can display images with just terminal <a target="_blank" rel="noopener" href="https://www.2daygeek.com/how-to-view-display-images-from-linux-terminal/">https://www.2daygeek.com/how-to-view-display-images-from-linux-terminal/</a><br>But it is convenient to view all the images in the path.</p>
-<p>2024-03-23 19:56<br>My MobaXterm’s fileviewer couldn’t load the images in the ECS and I think it will be very slow. And I think there isn’t some easy way to directly read the files in the Mini PC, a lesson learned from Android’s encryption. So I need to find a file viewer of linux.</p>
-<p>2024-03-23 19:56<br> Another way is :<br> “run python -m http.server 8080 (in python2: python -m SimpleHTTPServer 8080) from a folder containing the image and view it from the browser at localhost:8080&#x2F;path&#x2F;to&#x2F;image.jpg. Works great to browse and look at different image and text files in that same directory.”<br><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/35333/what-is-the-fastest-way-to-view-images-from-the-terminal">https://unix.stackexchange.com/questions/35333/what-is-the-fastest-way-to-view-images-from-the-terminal</a><br>So now I need the Mini PC to support graphics in broswer.</p>
-<p>2024-03-23 20:19<br>So I need to configure the X11 Forwarding to view images in MobaXterm.</p>
-<p>2024-03-23 20:26<br>So now I can view images in linux server, though X11 is only one image at a time. Well, this isn’t a good solution when the images are tiled.</p>
-<p>2024-03-23 20:34<br>Now I found “ranger”, wich seems faster than in the broswer but I didn’t find how it performs with X11. I also find wayland, which I had met when using cp713 to connect to a Monitor, but it seems not supported in Mobaxterm.</p>
-<p>2024-03-23 20:39<br>Now it seems viewing plenty of images in linux is not convenient. So I will select the timestamps more careful and reduce checking images.</p>
-<p>2024-03-23 20:42<br>All the Chromeboxes I found are Intel Celeron 2955U.</p>
-<p>2024-03-23 20:47<br><a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Intel-Celeron-2955U-Notebook-Processor.98845.0.html">https://www.notebookcheck.net/Intel-Celeron-2955U-Notebook-Processor.98845.0.html</a><br>So Celeron 2955U is already an 10-year old CPU, I wonder whether it is sufficicent for scraping scripts.</p>
-<p>2024-03-23 20:53<br>Well, maybe I am too careful for single ip’s Bandwidth and lazy of improving my script. Now I had been banned by a html server for I iterate all the left mounts of the month for each day, which has a complexity like n^{2} (MobaTexEditor has TeX not LaTeX)<br>So I could randomly select a number to try to find the edge number of total htmls of a specific day and the use to iterators the expand the edge.</p>
-<p>2024-03-23 21:06<br>Oops, I wrote this script two weeks ago and I forgot I just made it to iterate from the begainning of the current day and tried to break when response was not 200. Then I found the counting number of the htmls was not continuous so I didn’t use break. And I hadn’t tested random method so I chose to just iterate for sure.</p>
-<p>2024-03-23 21:19<br>Well, the content is out of the title.</p>
-<p>2024-03-23 21:44<br>Back to the topic, I think scraping scripts, for my case, are mainly about writing image files and html&#x2F;txt files and handling python’s for loops. Network could be a factor, but I ignore it for I just use very low Bandwidth and the eduroam WiFi. This was the reason I firstly wanted to choose DDR4 RAM.</p>
-<p>2024-03-23 21:54<br>Well, actually I know nothing about hardware. And I didn’t find out whether DDR3 is slow in running scripts, there are just some game performance.</p>
-<p>2024-03-23 22:04<br>Ah, I just had a easier way, I can just compare to the CPU of my ECS, which is sufficient for my scripts. So my ECS’ CPU equals to Intel(R) Xeon(R) Platinum 2500MHz.</p>
-<p>2024-03-24 7:34<br>I just fonud the discount is only for 2-core 2G RAM, whith Intel(R) Xeon(R) Platinum 8269CY.</p>
-<p>2024-03-24 7:56<br>Oracle’s “Always free” seems more appealing, while the sign up procedure is herder.</p>
-<p>2024-03-24 9:10<br>So now I decide to buy a HP Q150 to try its usibility.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/Mini-PC-for-scraping/" data-id="clu46ccon0000l8va6k7bfx4v" data-title="Mini PC for scraping" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Timestamps-ended-with-capital-letters" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/23/Timestamps-ended-with-capital-letters/" class="article-date">
-  <time class="dt-published" datetime="2024-03-23T11:15:56.000Z" itemprop="datePublished">2024-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/23/Timestamps-ended-with-capital-letters/">Timestamps ended with capital letters</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-23 19:15<br>Finding the meaning of sid as timestamp helped to scrap thoroughly, while I still didn’t figure the last part’s meaning. The format is “{fixed numbers lebeled the city}+YYMMddHHmmSS+{4-figure number}+{a capital letter}. I had found that mostly in a fixed day or at least a period, the last letter is fixed. And different years have different letter. So I supposed it was used to be the label of year. However, the letters contain ‘R’ so they are not heximial number. So now I am confused with this encoding.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/Timestamps-ended-with-capital-letters/" data-id="clu46ccp30004l8va86o1g1k5" data-title="Timestamps ended with capital letters" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Timeline-view" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/23/Timeline-view/" class="article-date">
-  <time class="dt-published" datetime="2024-03-23T01:26:44.000Z" itemprop="datePublished">2024-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/23/Timeline-view/">Timeline view</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-23 09:26<br>I think scraping pictures by timestamps is the most natural way, which just like viewing the original process of capturing the street views. Some collecters are diligent, driving through nearly all the blocks and compounds, which I admire most. While some collectors are lazy, just driving along the roads, and not even the complete road.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/Timeline-view/" data-id="clu46ccp20003l8vafvcy3ra2" data-title="Timeline view" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/26/English-writing-assistance-tools/" data-id="clumj7gxo000d3kva1f4s9koe" data-title="English writing assistance tools" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -481,10 +410,10 @@
 
 
   
-    <article id="post-Taxi-Bus-Passport-and-Mater-Card" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Morning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/" class="article-date">
-  <time class="dt-published" datetime="2024-03-22T13:31:24.000Z" itemprop="datePublished">2024-03-22</time>
+    <a href="/2024/03/26/Morning/" class="article-date">
+  <time class="dt-published" datetime="2024-03-25T23:16:20.000Z" itemprop="datePublished">2024-03-26</time>
 </a>
     
   </div>
@@ -495,7 +424,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/">Taxi, Bus, Passport and Mater Card</a>
+      <a class="p-name article-title" href="/2024/03/26/Morning/">Morning</a>
     </h1>
   
 
@@ -503,12 +432,92 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>2024-03-22 21:31<br>Sometimes, hard conditions just trigger doing hard things, with expanded scopes.<br>Due to mu campus’ isolated location, I realized traveling really costs a lot. Now I truly know the function of bus is to connect suburbans to the city like branches and form a network in the city. As long as the stations are easy to find, it could save a lot from taxi.</p>
+        <p>2024-03-26 07:16<br>2024-03-27 07:46<br>Actually this is created to write yesterday and now again, the classroom definitely isn’t a quite place with noise of wheeling like planes flying above and moving desks. It’s a pity I don’t know what’s the other schools’ morning look like. But now Im sure it is horrible when the cleaners are live in the building and pull a car around.</p>
+<p>2024-03-27 07:54<br>In 6:30 I found I just need to put my laptop in another classroom and then my other chargers had all been taken off. Well, when just now I changed to another classroom to find there were two laptops of some guy keeping charging.</p>
+<p>2024-03-27 08:00<br>Well, the only sarcastic bonus of suffering, is it is the only situation which could make ending become a good thing.</p>
+<p>2024-03-27 08:07<br>So is a person’s day certain or chaos? The factors of how a day will develop are the plan or the willing, the external events and the disturbance. Well, these are internal and external, also certain and random. The factors change their influence degree by the priority and also by the willing.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/" data-id="clu2r9s840001s0va5anldq6n" data-title="Taxi, Bus, Passport and Mater Card" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/26/Morning/" data-id="clumj7gxx000z3kvafhaqbux8" data-title="Morning" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MIUI9-9006-without-Music-folder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/25/MIUI9-9006-without-Music-folder/" class="article-date">
+  <time class="dt-published" datetime="2024-03-25T14:07:29.000Z" itemprop="datePublished">2024-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/25/MIUI9-9006-without-Music-folder/">MIUI9 9006 without Music folder</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/25/MIUI9-9006-without-Music-folder/" data-id="clumj7gxw000w3kva2rzo1vvs" data-title="MIUI9 9006 without Music folder" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Plans-for-hometown-weekends" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/25/Plans-for-hometown-weekends/" class="article-date">
+  <time class="dt-published" datetime="2024-03-25T12:47:05.000Z" itemprop="datePublished">2024-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/25/Plans-for-hometown-weekends/">Plans for hometown weekends</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-25 20:47<br>2024-03-29 20:04<br>Well, I finally have time to write this post. Recently, weather has slowly changed with grass, flowers and winds. Well, in the campus around April a kind of flower with fragrance, which is the same as the flower used to outside my home. In fact, this is the only smell of flowers I had never know. Well, I don’t know its name and I don’t want to know, for, less impression, less missing.<br>So I want to not only know but also feel the weather of my hometown once again. I have planned to take flights back 3-4 times a month by making Monday and Friday as less classes as I can and finishing all the homework in the left days.<br>So distance and time are still gaps and difficulties for human. And recently I noticed there will be mid-term exam in the next year, so I will finish the corresponding day’ back in this year. This rises the considerision of how to correspond the similiar weather in the different years, I need some searching and weather data to make a rough correspondence.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/25/Plans-for-hometown-weekends/" data-id="clumj7gxz00193kva1tb69ei0" data-title="Plans for hometown weekends" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -524,7 +533,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -538,7 +547,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/" rel="tag">Mathematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
     </div>
   </div>
 
@@ -548,7 +557,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 10px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
+      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Mathematics/" style="font-size: 13.33px;">Mathematics</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 10px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
     </div>
   </div>
 
@@ -570,23 +579,23 @@
       <ul>
         
           <li>
-            <a href="/2024/05/05/Vera-Rubin/">Vera Rubin</a>
+            <a href="/2024/05/09/Being-mature-and-being-old/">Being mature and being old</a>
           </li>
         
           <li>
-            <a href="/2024/05/05/Before-changing-timezone/">Before changing timezone</a>
+            <a href="/2024/05/09/A-glance-at-Mathematics-PhD/">A glance at Mathematics PhD</a>
           </li>
         
           <li>
-            <a href="/2024/05/04/A-glance-at-Quantum-computer/">A glance at Quantum computer</a>
+            <a href="/2024/05/08/About-Math-amateur/">About Math amateur</a>
           </li>
         
           <li>
-            <a href="/2024/05/04/Secondhand-jacket-with-musty-smell/">Secondhand jacket with musty smell</a>
+            <a href="/2024/05/08/More-about-Graph-and-Comparison-among-universities/">More about Graph and Comparison among universities</a>
           </li>
         
           <li>
-            <a href="/2024/05/03/Use-Cloud-Drive/">Use Cloud Drive for temporary use</a>
+            <a href="/2024/05/08/memory-block/">memory block</a>
           </li>
         
       </ul>

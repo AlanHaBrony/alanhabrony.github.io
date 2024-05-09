@@ -69,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Finally-not-404" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Recover-Android-Data-after-Flashing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/10/Finally-not-404/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:51:16.000Z" itemprop="datePublished">2024-03-10</time>
+    <a href="/2024/03/11/Recover-Android-Data-after-Flashing/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T04:37:12.000Z" itemprop="datePublished">2024-03-11</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Finally-not-404/">Finally not 404</a>
+      <a class="p-name article-title" href="/2024/03/11/Recover-Android-Data-after-Flashing/">Recover Android Data after Flashing</a>
     </h1>
   
 
@@ -91,13 +91,331 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>From sketch, I followed the guide, created Github Pages, setup the hexo and git and generated the posts.<br>Then the 404 began, I searched all the blogs and tried again and again.<br>However, in the end I found I used the wrong email to generate the key.</p>
-<p>Now I learned how to use git and hexo.</p>
+        <p>2024-03-11 12:37</p>
+<p>Now since I have made copy of userdata, next step is to find recovery tools.<br>I am fimiliar with Diskgenius, which is quite useful in HDD and tf-card&#x2F;microSD data recovery.<br>However, when I scanned my Android devices in 9006 Disk mode or SSD of my desktop, the result were only very few files with very recent timestamp.</p>
+<p>I have not tried any other data recovery tools. I have prepared my Chromebook and searched some Forensics tools, which I think might be more useful.</p>
+<p>“It can be recovered using complex sector scanning, however if you used Encryption, your Data partition may still have information on it, but it will still be encrypted.</p>
+<p>The main source for recovering Data other than using Root Access to do a full sector scan of the Data &#x2F; Cache Partitions, is to undelete data on the External SD Card”  <a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/210441/can-user-data-be-recovered-after-formatting-and-flashing-stock-rom?r=SearchResults">https://android.stackexchange.com/questions/210441/can-user-data-be-recovered-after-formatting-and-flashing-stock-rom?r=SearchResults</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Finally-not-404/" data-id="cltlgfvbf00006ovaeuf72bop" data-title="Finally not 404" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/11/Recover-Android-Data-after-Flashing/" data-id="cltmiavk30001mkva2eqs9b7b" data-title="Recover Android Data after Flashing" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Dumping-my-meilan2c" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Dumping-my-meilan2c/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T04:11:29.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Dumping-my-meilan2c/">Dumping my meilan2c</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 12:11</p>
+<p>Well, I decide to just pull the userdata now. But when I used the command “adb shell &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su -c “cat &#x2F;dev&#x2F;block&#x2F;dm-0 2&gt; &#x2F;dev&#x2F;null” &gt; userdata.img”<br>in <a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364">https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364</a></p>
+<p>it showed dm-0 not exist, so I just tried “adb pull &#x2F;dev&#x2F;block&#x2F;mmcblk0 “, which ran correctly.<br>I wonder whether this is due to my meilan2c has already unblocked BL and has flashed CM14 before.</p>
+<p>Now I still need to find out how to copy the whole emmc, and I wonder whether flashing ROM changes the partion table and how to recovery the fies before flashing.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Dumping-my-meilan2c/" data-id="cltmiavjz0000mkvahois7b5g" data-title="Dumping my meilan2c" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Materials-for-dumping-mtk-devices" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Materials-for-dumping-mtk-devices/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T03:33:09.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Materials-for-dumping-mtk-devices/">Materials for dumping mtk devices</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 11:34</p>
+<p>The steps of backup mtk devices:<br>“Mediatek devices do following:<br>if your device is encrypted<br>get a temp root shell with mtk-su<br>dump your decrypted userdata partition &#x2F;dev&#x2F;block&#x2F;dm-0<br>(this will take ~25 GB&#x2F;h)</p>
+<p>sudo apt-get install android-tools-adb extundelete testdisk<br>adb push mtk-su &#x2F;data&#x2F;local&#x2F;tmp&#x2F;<br>adb shell chmod 0755 &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su<br>adb shell &#x2F;data&#x2F;local&#x2F;tmp&#x2F;mtk-su -c “cat &#x2F;dev&#x2F;block&#x2F;dm-0 2&gt; &#x2F;dev&#x2F;null” &gt; userdata.img”</p>
+<p><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364">https://android.stackexchange.com/questions/219346/how-to-pull-data-from-internal-memory-on-an-unrooted-phone/219364?r=SearchResults#219364</a></p>
+<p>About mtk-su:<br><a target="_blank" rel="noopener" href="https://xdaforums.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/">https://xdaforums.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/</a></p>
+<p>Partions and what’s scatter file of mtk:<br><a target="_blank" rel="noopener" href="https://www.lieberbiber.de/2015/07/04/mediatek-details-partitions-and-preloader/">https://www.lieberbiber.de/2015/07/04/mediatek-details-partitions-and-preloader/</a></p>
+<p>Well, however, I still prefer to have a full copy the how emmc of my m2c, since it is just total 16G.<br>As the thoughts about data recovery:<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/210358/would-it-be-theoretically-possible-to-do-a-block-level-backup-of-dev-media-with#">https://android.stackexchange.com/questions/210358/would-it-be-theoretically-possible-to-do-a-block-level-backup-of-dev-media-with#</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Materials-for-dumping-mtk-devices/" data-id="cltmea3ax00007kvaertca4rn" data-title="Materials for dumping mtk devices" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Workflow-of-Andorid-Data-Recovery-with-root-and-PC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T02:20:55.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/">Workflow of Andorid Data Recovery with root and PC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 10:20</p>
+<p>“After TWRP is installed, I could create a NANDroid backup of specific partitions (raw images) then set them read only and mounted on PC I could use some IT-Forensics apps… to recover deleted (non-overwrited files)”<br>“If your device is unlocked, you could even use TWRP without installing it: fastboot boot twrp.img would directly boot it without any modifications to the device. –<br>Izzy♦ Dec 29, 2017 at 8:15”<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/188213/solved-how-to-recover-data-from-android-sdcard-downloads-on-xiaomi?newreg=9987614e8c844a35abc4de93d0f3a564">https://android.stackexchange.com/questions/188213/solved-how-to-recover-data-from-android-sdcard-downloads-on-xiaomi?newreg=9987614e8c844a35abc4de93d0f3a564</a></p>
+<p>“<a target="_blank" rel="noopener" href="https://android.stackexchange.com/tags/data-recovery/info">https://android.stackexchange.com/tags/data-recovery/info</a>“</p>
+<p>2024-03-11 10:27</p>
+<p>“With a custom recovery: Take a nandroid backup<br>With a rooted device: create images from your storage”<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/89777/my-android-phone-is-completely-reset-whats-the-best-way-to-recover-the-deleted">https://android.stackexchange.com/questions/89777/my-android-phone-is-completely-reset-whats-the-best-way-to-recover-the-deleted</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Workflow-of-Andorid-Data-Recovery-with-root-and-PC/" data-id="cltmbpvzf0000gwva7crk8u00" data-title="Workflow of Andorid Data Recovery with root and PC" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Is-dd-full-copy-of-partions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Is-dd-full-copy-of-partions/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T01:51:00.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Is-dd-full-copy-of-partions/">Is dd full copy of partions?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 09:51</p>
+<p>While searching for making copy of Android deviecs, I found dd in linux is easy to use<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc">https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc</a><br>So dd could make a full backup, while my goal is trying to recovery the wrapped data, I need the function like copy sectors of all uesd and spare ones.</p>
+<p>2024-03-11 10:05<br>So dd chould make a full copy of a disk.<br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/4906/using-dd-for-disk-cloning">https://serverfault.com/questions/4906/using-dd-for-disk-cloning</a><br>With some attentions:<br>1.”clone disks having bad blocks: dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;4096 conv&#x3D;sync,noerror –<br>Sam Watkins Nov 14, 2014 at 6:52”</p>
+<p>2.”dd is most certainly the best cloning tool, it will create a 100% replica simply by using the following command. I’ve never once had any problems with it.<br>dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;32M status&#x3D;progress<br>Be aware that while cloning every byte, you should not use this on a drive or partition that is being used. Especially applications like databases can’t cope with this very well and you might end up with corrupted data.”</p>
+<p>Since there is no bad sectors in my m2c, now I need to do is specify the if command.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Is-dd-full-copy-of-partions/" data-id="cltmb5pnd0000dsva3g0taeaf" data-title="Is dd full copy of partions?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Materials-for-reading-emmc-of-MTK-platform" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T23:36:10.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/">Materials for reading emmc of MTK platform</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 07:36<br>Just found some materials for my MTK devices (meilan2c MT6735, has unblocked BL and rooted):<br>xda<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NulWJo2RSKE">https://www.youtube.com/watch?v=NulWJo2RSKE</a> MTKClient<br>MTKBypass</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/" data-id="cltm5sdag0000yova5igp6rum" data-title="Materials for reading emmc of MTK platform" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Formats-of-Street-View-Urls" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/10/Formats-of-Street-View-Urls/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T14:47:36.000Z" itemprop="datePublished">2024-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/10/Formats-of-Street-View-Urls/">Formats of Street View Urls</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-10 22:47</p>
+<p>While chekcing requests of street view api, I found the formats of the urls are typically like:<br>    “<a target="_blank" rel="noopener" href="https://streetviewserver.map/thumb?streetview-id=">https://streetviewserver.map/thumb?streetview-id=</a> &amp;positionparam1&#x3D; &amp;positionparam2&#x3D; &amp;key&#x3D; &amp;info”<br>    which only has a thumb of very low resolution, or like</p>
+<pre><code> &quot;https://streetviewserver.map/tile?streetview-id= &amp;tileaxis1= &amp;tileaxis2= &amp;key= &amp; info&quot;
+which with enough resolution,
+</code></pre>
+<p>I wonder whether I could find higer resolution image by changing the query parameter, I have tried “img”, “full” with 404 results.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/10/Formats-of-Street-View-Urls/" data-id="cltln1s7s00027kva5m789elc" data-title="Formats of Street View Urls" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-How-to-scrawl-the-news-data-completely" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/10/How-to-scrawl-the-news-data-completely/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T13:08:18.000Z" itemprop="datePublished">2024-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/10/How-to-scrawl-the-news-data-completely/">How to scrawl the news data completely</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-10 21:08</p>
+<p>Recently, I was scrawling the news data. The target is simply web pages. So I use requests to get htmls and images.<br>Firstly, I downloaded the contens list of the news and try to extract urls of the adjacent pages. </p>
+<p>I tried using pywebcopy to download, but I don’t know why the early urls could download nothing and I didn’t search out any answer.</p>
+<p>Then I just used re and find to extract. However, I found maybe due to the orgnization of the content, I couldn’t download all the target news by scrawling.</p>
+<p>Since the format of url is “<a target="_blank" rel="noopener" href="http://www.domain.com/content/YearMMdd/%7B6:six-decimal">www.domain.com/content/YearMMdd/{6:six-decimal</a> numbers of total number of contents}”, and one html does not exceed 30kb, I decided to iterate the number and timestamp to make sure scrapying completely.</p>
+<p>Today I found python has a limit of recurrsion, which needed to be reset bigger with<br>import sys<br>sys.setrecursionlimit(10000)  </p>
+<p>And now the connect breaks every hundreds of requests. I need to learn more skills of VPS and scrawling.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/10/How-to-scrawl-the-news-data-completely/" data-id="cltljsipl0000b4vadfah7igf" data-title="How to scrawl the news data completely" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -109,10 +427,10 @@
 
 
   
-    <article id="post-Hello-World-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Summary-for-scrapying-of-last-two-weeks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-6/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:36:28.000Z" itemprop="datePublished">2024-03-10</time>
+    <a href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T12:54:18.000Z" itemprop="datePublished">2024-03-10</time>
 </a>
     
   </div>
@@ -123,7 +441,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-6/">Hello World</a>
+      <a class="p-name article-title" href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/">Summary for scrapying of last two weeks</a>
     </h1>
   
 
@@ -131,11 +449,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>2024-03-10 20:54</p>
+<p>The most early version of street view just closed its website panel in 2023, I very treasure that data and I don’ t know when the only api in the app will close.<br>So I dive into frida hook as soon as the beginning from sketch, for before this I never think scrapying as too fancy tech.<br>At first, I only knew the app still had the street view, so I set up firda for my cp713 and flashed Redmi2 with Android 8 and magisk. However, I connected the frida with adb but it always throw error about the port was occupied. Then I tried the early version of the app and tried the Android x86, which all failed to connect with frida. Finally, I found httpcannary could capture the requests and responses just in the Android.<br>So I switched to httpcannary, again from sketch, for I haven’ t learned anything about Network. At first, I just looked the results, trying to find pictures directly. By the wway, I even searched the <a target="_blank" rel="noopener" href="http://www.archive.org/">www.archive.org</a>, it seems only captured the html files. By chance I finally an 60x60 res picture. Surprising and motivated, I began to check that HTTP request and response. This is my first time to check out HTTP communication and Web tessting, so at first I didn’t know what the “headers” mean. </p>
+<p>Along the process, I really searched a lot and learned a lot, which is quite enjoyable. Finding the first image, I just know if I could find the url, then I could find the data. So I checked the urls to surprisingly find they all had same params.<br>Then I searched the urls and params to find there was an API of the street view in 2020 and it was closed now. But I happened to find in a web page which still offered the api to request the id of the street view. At the same time, I found a new url of street view in a blog with 512x512 res.<br>So I began to search for how to scrap these with python, for again I haven’ t learned web API, HTML, XML, Json and anything about scraping. I only learned python when I make a script for doing vocabulary homework and Kaggle.</p>
+<p>From sketch, I learned from the blogs, searching all the times to make my first scraping from testing web page, finding the range of the pictures for its division method.<br>At first, without any knowledge about geography, I wanted to have four points’ lat and lng to loop all the points, for the street view id is encoding by lat and lng through the API. Soon I was confused by the huge number of loops, because the number of the decimal of the lat and lng is all 23, even for a small street, the number of loops has proceed 13.<br>Then I used the less number of decimal and selected manually to get the id_list, for it is relatively easy to use selenium to capture the image with the url as long as id is specified.<br>I also tried using requests to see whether I could directly get the image, but the response is hard to decode in the form of &#x2F;x, which I haven’ t learnd either and I didn’ t find any tools or packages.<br>Fotuately, selenium was good at capturing elements with driver. Then I used selenium to use the API page I found to simulate click to get id_list. It confused me that the value of id_element is blank as long as option(‘headless’). I searched and tried to add more options such as User-Agent but none of them worked, so I think it isn’t because the anti-scrapying detector, at least not in items of options.<br>So now descipite of the memory consumption of web pages, I finally could automatically download the street view pictures.</p>
+<p>I think it is not proper to post the code and url online. Although my Bandwidth usage is within 1Mbps, it maybe problem if it is widely used. And since the API is declared closed, I think the web page is just a leak.<br>However, I also wonder how this street view data will be handled. Since they closed the street view service in web and latest app, it seems they are going to close it. But these photos are from 2014-2015, at which time mobile phones were weak at taking photos. So I think these photos are more valuable than the cuurrent street view data.</p>
+<p>For me, this is my entrance of Network and scraping, the process of finding urls and proagramming is fun and really made me learn a huge new technologies. Also it brodan and enhanced my knowledge of python.<br>Also, this is the first time I have a hundround thousand amount of dataset of my own.<br>By the way, I found click process kinda interesting. At the beginning, it is common to think of iterate, and then tunning the step param just like Learning models will tell the most efficient choice.<br>Also for the first time I learned about cloud VPS and ECS with hardware efficiency of scraping and the anti-scraping.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-6/" data-id="cltlfvofm00001svaarn285v5" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" data-id="cltljsipp0001b4va7ka30ldt" data-title="Summary for scrapying of last two weeks" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -147,10 +471,10 @@
 
 
   
-    <article id="post-Hello-World-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Draft-to-do-list" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-5/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:18:59.000Z" itemprop="datePublished">2024-03-10</time>
+    <a href="/2024/03/10/Draft-to-do-list/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T12:33:07.000Z" itemprop="datePublished">2024-03-10</time>
 </a>
     
   </div>
@@ -161,7 +485,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-5/">Hello World</a>
+      <a class="p-name article-title" href="/2024/03/10/Draft-to-do-list/">Draft to-do list</a>
     </h1>
   
 
@@ -169,278 +493,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-5/" data-id="cltlf985h0000ksva6223fwze" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-4/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:02:44.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-4/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-4/" data-id="cltleo7yo0000v0vaeiqn83pr" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="hello-World-1" class="h-entry article article-type-hello" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/World-1/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:55:18.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/World-1/">World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/World-1/" data-id="cltleeo6x0000u8va5b7l9vlx" data-title="World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="hello-World" class="h-entry article article-type-hello" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/World/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:47:47.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/World/">World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-10 18:47<br>Blue sky, wihte clouds, breeze and strong winds, things from my hometown.<br>Personal scraping is easy, with enough time to iterate.</p>
+        <p>2024-03-10 20:33</p>
+<p>Well, gradually I found that in the never-dragging time, changes are invitable. Of crouse good changes are good.<br>But the loss is also along the way.<br>This is where I find the importance and value of data for memories. So I value meaningful data and try to save if needed. Also this helps to imporve and broaden my skills and knowledge.</p>
+<p>In the past two weeks, I finally made python scripts to scrap the street view data for my hometwon and the news of the web-page games.<br>Now I have just copied the sectors of my old Android phone to be extracted and recovered.</p>
+<p>Here is a draft list:<br>    1. Download street views of selected areas from various source<br>    2. Find the weather dataset of my hometwon and make analysis<br>    3. Download news of web-page games nearly 500000 htmls<br>    4. Extract and try to recover data of Android image<br>    5. Find ways to extract data from MTK and higher Android versions</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/World/" data-id="cltle568f0000p4va0jho1c2w" data-title="World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-3/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:25:56.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-3/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-3/" data-id="cltldd48h0000f4vagzvtcvwf" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-2/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:00:26.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-2/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-2/" data-id="cltlcg6r30002s0va7f7584ov" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-1/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T08:58:07.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-1/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-1/" data-id="cltlcg6r20001s0va4o9n0guz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-0/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T08:55:26.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-0/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-0/" data-id="cltlcg6qw0000s0va9wnu2pt9" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/10/Draft-to-do-list/" data-id="cltlill7n00007wva21hd5c7c" data-title="Draft to-do list" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -456,7 +517,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -470,7 +531,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/" rel="tag">Mathematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
     </div>
   </div>
 
@@ -480,7 +541,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 10px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
+      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Mathematics/" style="font-size: 13.33px;">Mathematics</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 10px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
     </div>
   </div>
 
@@ -502,23 +563,23 @@
       <ul>
         
           <li>
-            <a href="/2024/05/05/Vera-Rubin/">Vera Rubin</a>
+            <a href="/2024/05/09/Being-mature-and-being-old/">Being mature and being old</a>
           </li>
         
           <li>
-            <a href="/2024/05/05/Before-changing-timezone/">Before changing timezone</a>
+            <a href="/2024/05/09/A-glance-at-Mathematics-PhD/">A glance at Mathematics PhD</a>
           </li>
         
           <li>
-            <a href="/2024/05/04/A-glance-at-Quantum-computer/">A glance at Quantum computer</a>
+            <a href="/2024/05/08/About-Math-amateur/">About Math amateur</a>
           </li>
         
           <li>
-            <a href="/2024/05/04/Secondhand-jacket-with-musty-smell/">Secondhand jacket with musty smell</a>
+            <a href="/2024/05/08/More-about-Graph-and-Comparison-among-universities/">More about Graph and Comparison among universities</a>
           </li>
         
           <li>
-            <a href="/2024/05/03/Use-Cloud-Drive/">Use Cloud Drive for temporary use</a>
+            <a href="/2024/05/08/memory-block/">memory block</a>
           </li>
         
       </ul>
