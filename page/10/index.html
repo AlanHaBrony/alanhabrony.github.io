@@ -69,6 +69,321 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Checking-404-within-vs-before-the-loop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Checking-404-within-vs-before-the-loop/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T08:05:22.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Checking-404-within-vs-before-the-loop/">Checking 404 within vs before the loop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 16:34<br>When I was modifying my script of scraping streetview, I found when the last iterate’ range become 4-figue numbers, the low speed dragged by the three for loops was magnified. The result was the iterate of requests became very slow at the speed of just 1 request per second.</p>
+<p>This motivated me to improve the checking part of invalid urls. I examinated my code to find I put the if check inside the inner loop, for at first I just focused on the function of passing the invalid urls and then downloading the valid urls.</p>
+<p>2024-03-24 16:48<br>This time I realized maybe the initialization of for loops itself also consumes time, so I put the if 404 check outside of the for loops by just use fixed parameter, for there are tiled images, one fragment’s existance can implicy all the fragments’.<br>And this time, the speed was truly improved by nearly ten times. Now it could post 10 requests per sencond. And the network measure doubled.<br>So I think this proves that the python’s mutiple for loops should contain as less as code as possible, for the 404 check doesn’t engage the iterate but it still slow down the overall speed.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Checking-404-within-vs-before-the-loop/" data-id="clu5aeony0000zcva8vh2fvlz" data-title="Checking 404 within vs before the loop" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Finally-flashed-postmarketOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Finally-flashed-postmarketOS/" class="article-date">
+  <time class="dt-published" datetime="2024-03-24T02:34:11.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Finally-flashed-postmarketOS/">Finally flashed postmarketOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 10:34<br>Last time after flashing userdata with postmarketOS image and used “erast system” in a guide, my wt86047 stuck in the postmarketOS logo with “Couldn’t mount root partion”. Then I just used Miflash to flash back to MIUI Android 4.4 and used TWRP to flash to Android 5.1.<br>Today I tried to flash postmarketOS image again and didn’t erase system, then I surprisingly found it successfully booted. I think this should due to I didn’t update to Android 5.1 in the last time. I also searched in xda which said the LineageOS’s firmware is needed, so postmarketOS image doesn’t need this.</p>
+<p>I was also surprised by the UI of sxmo, the only problem is it will flicker three times when unlock the screen. Although my wt86047 is just 1G RAM, it is still more smooth than my Mi4 with Ubuntu Touch, which is hard to type using nano and stuck every time when using the Camera.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Finally-flashed-postmarketOS/" data-id="clu5aeoo30001zcvaf9xf54kf" data-title="Finally flashed postmarketOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Need-an-alarm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/24/Need-an-alarm/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T23:15:47.000Z" itemprop="datePublished">2024-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/24/Need-an-alarm/">Need an alarm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-24 07:15<br>Ah, today I woke up late twenty minutes and my desktop had been cleared out of the room. So now I need an alarm, though normally I don’t have a quite morning. And I also need to set my desktop alive when closed.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/24/Need-an-alarm/" data-id="clu4pzjlo0000scva9qzp7x4r" data-title="Need an alarm" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Scrap-htmls-with-discontinuous-counting-number-thoroughly" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T13:16:38.000Z" itemprop="datePublished">2024-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/">Scrap htmls with discontinuous counting number thoroughly</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-23 21:16<br>Two weeks ago I wrote a script to scrap news data in web page by just downloading html files, since the urls are named easily in the form “<a target="_blank" rel="noopener" href="http://www.domain.com/news/content/YYYYMMdd/%7B6-figure">www.domain.com/news/content/YYYYMMdd/{6-figure</a> number of the total number of the htmls} “.<br>So at the beginning I wanted to iterate all the days and break when this “thisday&#x2F;nextnumber” response is not 200. But then I found the numbers had discontinuity, which is randomly distributed so I couldn’t just use break.<br>Secondly, I found the amount of news of a day was not evenly distributed. There were more news in holidays and even no news in some day. I didn’t know how to estimate the performance of random method by trying to find a number within a day.<br>So now to make sure to scrap thoroughly, I just iterate numbers for each day with a n^{2} complexity. It is fine except the server will disconnect intermittently.<br>I think this is like a question of Algorithm, but with the difficulty of real conditions. Now I haven’t came up with better method.</p>
+<p>2024-03-23 22:38<br>AH! Now I see, observing the downloading process again, I found when the number is out of the current day, there will be a long pause of downloading. So I could record the pause and set one minute as threshold to day+1.<br>And for the complete scraping, I realize adding a second check of the missing numbers will be useful.</p>
+<p>2024-03-23 22:45<br>Well, again I forgot I thought about this two weeks ago and found there were only “time.perf_counter()” examples for a complete code. While my requests is to check the time within the for loop.</p>
+<p>2024-03-23 22:49<br>Now I found time.time() to get the system.</p>
+<p>2024-03-23 22:58<br>This is the added code:<br> start&#x3D; time.time()<br> if(time.time()-start &gt; 60):<br>     date&#x3D;date+1<br>     continue</p>
+<p>2024-03-24 9:13<br>Now I learned time.perf_counter() is also global, but I think it’s faster than seconds. So I will still use time.time(), but it seems now my ip has been banned again.</p>
+<p>2024-03-24 9:27<br>But now the script just finished in a few minutes without any downloading. I have tested “if ((time.time()-start) &gt;60):” is right (I just fonud I mixed the JAVA’s if() syntax).<br>The most time-consuming part of my script is iterate the numbers out of the current day, so the time window I need to measure starts from a valid url, which is the last valid iterater. So I think the start time should in the else:, but I need to check the scope of variables in else:.</p>
+<p>2024-03-24 9:42<br>So the variable declared in else: is local. And the time measure is set after the last response 200, I think should fix the code.</p>
+<p>2024-03-24 13:08<br>Having a second thought, with the afterward check of the missing numbers, I could just make day+1 when response is 404.<br>2024-03-24 13:14<br>The tricky part is to make sure the numbers of the current day have already been iterated, so if day+1 when 404 but the numbers are still in the last day, it will need to jump back with day-1.</p>
+<p>But I found in some days, there are nearly 100 missing numbers, which will need plenty of flips.<br>So now I still have no better method than iterate all or timer.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/23/Scrap-htmls-with-discontinuous-counting-number-thoroughly/" data-id="clu46ccor0001l8va47dna6l7" data-title="Scrap htmls with discontinuous counting number thoroughly" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Mini-PC-for-scraping" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/23/Mini-PC-for-scraping/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T11:16:20.000Z" itemprop="datePublished">2024-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/23/Mini-PC-for-scraping/">Mini PC for scraping</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-23 22:13<br>Conclusion: I just saw the ECS has discont and therefore cheaper than Mini PC. So for now I will use more ECS.</p>
+<p>2024-03-23 19:26<br>Till now I just have my Windows desktop and a 2-core ECS with Ubuntu running scraping scripts. I need to keep my desktop charging and without power off for a 24h scraping. But sometimes I may need to take my desktop, so I started to look for a Mini PC for scraping.<br>I want to use just GNU and not to wast the price. I don’t know whether 2-core machines are enough, the storage surely should above 40G and larger is better. So I firstly searched about N100, N5095, J4125, etc. Most posts are about router but I dont’t need WANs and LANs. Then I saw a Mini PC with N5095, 16G RAM and 512G storage.<br>However, after a second thought, I found with the same price, I could buy 3-4 2-core Chromeboxes. So I searched about linux hardware specs again.</p>
+<p>2024-03-23 19:44<br>My requirement is just running python scripts and I need to check the scraped images. I haven’t learned about VM. I just had one linux device, cp713 with 8G RAM and i5-8250U, which will have fans noisy when running kvm or krita but okay with python and Chrome.</p>
+<p>2024-03-23 19:51<br>So linux can display images with just terminal <a target="_blank" rel="noopener" href="https://www.2daygeek.com/how-to-view-display-images-from-linux-terminal/">https://www.2daygeek.com/how-to-view-display-images-from-linux-terminal/</a><br>But it is convenient to view all the images in the path.</p>
+<p>2024-03-23 19:56<br>My MobaXterm’s fileviewer couldn’t load the images in the ECS and I think it will be very slow. And I think there isn’t some easy way to directly read the files in the Mini PC, a lesson learned from Android’s encryption. So I need to find a file viewer of linux.</p>
+<p>2024-03-23 19:56<br> Another way is :<br> “run python -m http.server 8080 (in python2: python -m SimpleHTTPServer 8080) from a folder containing the image and view it from the browser at localhost:8080&#x2F;path&#x2F;to&#x2F;image.jpg. Works great to browse and look at different image and text files in that same directory.”<br><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/35333/what-is-the-fastest-way-to-view-images-from-the-terminal">https://unix.stackexchange.com/questions/35333/what-is-the-fastest-way-to-view-images-from-the-terminal</a><br>So now I need the Mini PC to support graphics in broswer.</p>
+<p>2024-03-23 20:19<br>So I need to configure the X11 Forwarding to view images in MobaXterm.</p>
+<p>2024-03-23 20:26<br>So now I can view images in linux server, though X11 is only one image at a time. Well, this isn’t a good solution when the images are tiled.</p>
+<p>2024-03-23 20:34<br>Now I found “ranger”, wich seems faster than in the broswer but I didn’t find how it performs with X11. I also find wayland, which I had met when using cp713 to connect to a Monitor, but it seems not supported in Mobaxterm.</p>
+<p>2024-03-23 20:39<br>Now it seems viewing plenty of images in linux is not convenient. So I will select the timestamps more careful and reduce checking images.</p>
+<p>2024-03-23 20:42<br>All the Chromeboxes I found are Intel Celeron 2955U.</p>
+<p>2024-03-23 20:47<br><a target="_blank" rel="noopener" href="https://www.notebookcheck.net/Intel-Celeron-2955U-Notebook-Processor.98845.0.html">https://www.notebookcheck.net/Intel-Celeron-2955U-Notebook-Processor.98845.0.html</a><br>So Celeron 2955U is already an 10-year old CPU, I wonder whether it is sufficicent for scraping scripts.</p>
+<p>2024-03-23 20:53<br>Well, maybe I am too careful for single ip’s Bandwidth and lazy of improving my script. Now I had been banned by a html server for I iterate all the left mounts of the month for each day, which has a complexity like n^{2} (MobaTexEditor has TeX not LaTeX)<br>So I could randomly select a number to try to find the edge number of total htmls of a specific day and the use to iterators the expand the edge.</p>
+<p>2024-03-23 21:06<br>Oops, I wrote this script two weeks ago and I forgot I just made it to iterate from the begainning of the current day and tried to break when response was not 200. Then I found the counting number of the htmls was not continuous so I didn’t use break. And I hadn’t tested random method so I chose to just iterate for sure.</p>
+<p>2024-03-23 21:19<br>Well, the content is out of the title.</p>
+<p>2024-03-23 21:44<br>Back to the topic, I think scraping scripts, for my case, are mainly about writing image files and html&#x2F;txt files and handling python’s for loops. Network could be a factor, but I ignore it for I just use very low Bandwidth and the eduroam WiFi. This was the reason I firstly wanted to choose DDR4 RAM.</p>
+<p>2024-03-23 21:54<br>Well, actually I know nothing about hardware. And I didn’t find out whether DDR3 is slow in running scripts, there are just some game performance.</p>
+<p>2024-03-23 22:04<br>Ah, I just had a easier way, I can just compare to the CPU of my ECS, which is sufficient for my scripts. So my ECS’ CPU equals to Intel(R) Xeon(R) Platinum 2500MHz.</p>
+<p>2024-03-24 7:34<br>I just fonud the discount is only for 2-core 2G RAM, whith Intel(R) Xeon(R) Platinum 8269CY.</p>
+<p>2024-03-24 7:56<br>Oracle’s “Always free” seems more appealing, while the sign up procedure is herder.</p>
+<p>2024-03-24 9:10<br>So now I decide to buy a HP Q150 to try its usibility.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/23/Mini-PC-for-scraping/" data-id="clu46ccon0000l8va6k7bfx4v" data-title="Mini PC for scraping" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Timestamps-ended-with-capital-letters" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/23/Timestamps-ended-with-capital-letters/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T11:15:56.000Z" itemprop="datePublished">2024-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/23/Timestamps-ended-with-capital-letters/">Timestamps ended with capital letters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-23 19:15<br>Finding the meaning of sid as timestamp helped to scrap thoroughly, while I still didn’t figure the last part’s meaning. The format is “{fixed numbers lebeled the city}+YYMMddHHmmSS+{4-figure number}+{a capital letter}. I had found that mostly in a fixed day or at least a period, the last letter is fixed. And different years have different letter. So I supposed it was used to be the label of year. However, the letters contain ‘R’ so they are not heximial number. So now I am confused with this encoding.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/23/Timestamps-ended-with-capital-letters/" data-id="clu46ccp30004l8va86o1g1k5" data-title="Timestamps ended with capital letters" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Timeline-view" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/23/Timeline-view/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T01:26:44.000Z" itemprop="datePublished">2024-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/23/Timeline-view/">Timeline view</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-23 09:26<br>I think scraping pictures by timestamps is the most natural way, which just like viewing the original process of capturing the street views. Some collecters are diligent, driving through nearly all the blocks and compounds, which I admire most. While some collectors are lazy, just driving along the roads, and not even the complete road.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/23/Timeline-view/" data-id="clu46ccp20003l8vafvcy3ra2" data-title="Timeline view" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Taxi-Bus-Passport-and-Mater-Card" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/22/Taxi-Bus-Passport-and-Mater-Card/" class="article-date">
@@ -189,296 +504,6 @@
 
 
   
-    <article id="post-Foreign-pay-and-housing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Foreign-pay-and-housing/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T07:29:10.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Foreign-pay-and-housing/">Foreign pay and housing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-21 15:29<br>Well, jumping into a foreign country made me confused. It is surprising to find there are so many housing websites and I knew for the first time housing website registing needs fee, which bring another new task of payment in a foreign country. I don’t know why there are so many websites for the same usage and some of them have the same registing api, this needs searching and comparing.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Foreign-pay-and-housing/" data-id="clu0xce470000gsvagc6t44d9" data-title="Foreign pay and housing" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Terminate-nohup-process" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/Terminate-nohup-process/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T01:02:18.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/Terminate-nohup-process/">Terminate nohup process</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-21 09:02<br>Since I changed my scripts, I need to terminate the nohup process to change the scripts in ECS. Well I haven’t learned about process and ps command, after seaching I used “ ps -aux|grep “ and “kill -9 “. After terminating one process, another process threw “kill: (1215933): No such process” and the id number changed every time, also the CPU monitor didn’t change.</p>
-<p>2024-03-21 09:14<br>Now I know “1223340 pts&#x2F;3    S+     0:00 grep –color&#x3D;auto” represents the process has been terminated.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/Terminate-nohup-process/" data-id="clu0jlis40002u0va7lme0nz8" data-title="Terminate nohup process" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-datetime-of-Python" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/21/datetime-of-Python/" class="article-date">
-  <time class="dt-published" datetime="2024-03-21T00:54:33.000Z" itemprop="datePublished">2024-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/21/datetime-of-Python/">datetime of Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-21 08:54<br>When I checked the scraping folder, I found yesterday it nearly downloaded nothing. Then I realized I just used the former script which I wrote without knowing the meaning of sid and I haven’t iterated time ranges before. So the former script just iterated as numbers, which caused more invalid sids.<br>I searched and learned to iterate with datetime and modified the User-Agent.<br>“ delta&#x3D;time2-time1<br>  for dt in range(delta.seconds+1):<br>      time&#x3D;time1+datetime.timedelta(seconds&#x3D;dt)”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/datetime-of-Python/" data-id="clu0jlis30001u0va98cd9693" data-title="datetime of Python" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Problem-with-iterate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/20/Problem-with-iterate/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T14:48:14.000Z" itemprop="datePublished">2024-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/20/Problem-with-iterate/">Problem with iterate</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/Problem-with-iterate/" data-id="clu0jlirw0000u0va1nozdaly" data-title="Problem with iterate" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Shirley-Fenette" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/20/Shirley-Fenette/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T06:55:11.000Z" itemprop="datePublished">2024-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/20/Shirley-Fenette/">Shirley Fenette</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-20 14:55<br>Sometimes, Shirley Fenette’s words (maybe unaccruate) “Even for thousands of times again, I will still fall in love with Lelouch” flow up in my mind. Shirley is an unlucky character in Code Geass and I think Yiqilou Ohkouchi did not put no mercy in her. However, rumors said under the fans’ appeal, the movies did not make Shirley die.<br>I think Shirley is just a figure of normal school teenage girl, too simple and just like a child, Yiqilou Ohkouchi really didn’t put any wisdom in her. And I think this is just what a normal teenager student looks like, and she should be set as mainly a representive of victims under Lelouch’s actions. And I have to say seems all the misfortune caused by Lelouch are put on her and Euphemia.</p>
-<p>I remember these words, besides the plot is indeed impressive and Shirley is too innocent, also for that I think it contains a thought: with the given previous condition of the environment and the individual, the proess or events is also certain. This is an answer of why past could not be changed, despite the physical feasibility.<br>For the words in the plot, to be honst, I didn’t see any reason for Shirley to love Lelouch like this. In the manga “Code Geass : Lelouch The Private Home Tutor Manga” (which is an extra parallel setting only in school life, much more peaceful than the TV stories) Lelouch is very appealing for his handsome. I think Shirley’s feeling for Lelouch is just a teenager’s innocence feeling in the school life, so there is not point to end with too serious incident.</p>
-<p>So in the last movie Lelouch vi Britannia&#x2F;Re;surrection, Shirley is alive and has nearly nothing to do with Lelouch, which I think is a better end since the school period is over and Lelouch back to his destiny of King and his path with C.C. and Geass. And in 2020 I saw it is said, not in TV or movies, it is Shirley who brought Lelouch back after the Season2 Eposide 26 for she was the only person who could sneak around at the scene, which I think is the final fixed proper ending of Shirley. After all, she is just a normal girl just happened to be Lelouch’s friend.</p>
-<p>2024-03-20 15:43<br>Talk about school life, one Broadcast touched me in 2020, is after years, Lelouch’ friends gathered together for a promise of Lelouch to watch fireworks. Just at the time when they were talking about Lelouch, Orange let off fireworks at the roof requested by Lelouch.<br>So I think this is another main theme in Code Geass, different from Honeyworks’ simple and direct school life. And the rhyme “Innocent” of Code Geass’s OST is also very great.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/Shirley-Fenette/" data-id="cltzhwq1p00014cvaer0wcx9v" data-title="Shirley Fenette" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anime/" rel="tag">anime</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Causes-for-Windows-10-s-fan-spinning-I-met" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/20/Causes-for-Windows-10-s-fan-spinning-I-met/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T05:35:41.000Z" itemprop="datePublished">2024-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/20/Causes-for-Windows-10-s-fan-spinning-I-met/">Causes for Windows 10&#39;s fan spinning I met</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-20 13:35<br>Just now I met the second time my desktop’s fan spinning rapidly and noisy. First time, is for sometimes Diskgenius’s video viewer stuck, just open the Processes tab and close it will slove.<br>The second time, I haven’t met before, is a process called “Microsoft Windows Search indexer”, I don’t know why but searched to find by opening the control panel, inputting its name and unclicking all the items will solve.<br>The last one, actually I met it weeks ago, when I started generating plenty of pictures, a process called “Shell Infrastructure Host” will occupy CPU to nearly 90%, after searching I knew it is caused by the gallery in Windows, so I just uninstalled it since I didn’t need it, then finally peaceful and quiet.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/Causes-for-Windows-10-s-fan-spinning-I-met/" data-id="cltzhwq1j00004cva5yn74237" data-title="Causes for Windows 10&#39;s fan spinning I met" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Flashing-wt86047-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/20/Flashing-wt86047-linux/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T00:22:55.000Z" itemprop="datePublished">2024-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/20/Flashing-wt86047-linux/">Flashing wt86047 linux</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-20 08:40<br>I have already downloaded postmarketOS img, so at first I directly flashed lk2nd and rebooted but stuck in logo. So it needs to flash MIUI Android5.1 first.<br>Well, Im kinda confused with 2014813 and wt86047, it seems Xiaomi use the same code name for devices with 1G RAM and 2G RAM.<br>I flashed MIUI9 and then could reboot to lk2nd, after flashing postmarketOS, it stuck with error “unable to mount root partion”. I think the problem should in the MIUI9 ROM.</p>
-<p>2024-03-20 09:41<br>Well, now wt86047 could boot into TWRP but all the partions besies cache could not be mounted, which I think is due to flashing postmarketOS changed partion structure, now I think the only way is to use Miflash or flash in fastboot.</p>
-<p>2024-03-20 09:48<br>Ah, I just forgot Miflash could connect to Redmi2 in my desktop, and the fastboot mode is still usable.</p>
-<p>2024-03-20 10:03<br>I think 2014813 should belong to wt88047 for its 1G RAM hardware, Im confused to see the device info of wt86047. Weird thing is there is no fastboot ROM for 201413 <a target="_blank" rel="noopener" href="https://xiaomirom.com/rom/redmi-2-lte-hm2014813-china-fastboot-recovery-rom/">https://xiaomirom.com/rom/redmi-2-lte-hm2014813-china-fastboot-recovery-rom/</a><br>So I will try to flash 2014811’s ROM, I think the only problem should be sim could not work, which I don’t need.</p>
-<p>2024-03-20 10:55<br>Now I found Miflash could flash Redmi2 under fastboot mode, this is very helpful for unbricking.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/Flashing-wt86047-linux/" data-id="cltzcdzli00030cvafh9b91j3" data-title="Flashing wt86047 linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -497,7 +522,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/" rel="tag">Mathematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Encryption/" rel="tag">Android Encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CG/" rel="tag">CG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChromeOS/" rel="tag">ChromeOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Creator-Laptops/" rel="tag">Creator Laptops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Interpretation/" rel="tag">Data Interpretation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMR/" rel="tag">EMR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDD/" rel="tag">HDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI/" rel="tag">HDMI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InuYasha/" rel="tag">InuYasha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MINGW/" rel="tag">MINGW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/" rel="tag">Mathematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash/" rel="tag">Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/" rel="tag">Mini PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Port-Forwarding/" rel="tag">Port Forwarding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL8111/" rel="tag">RTL8111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Remote-Connection/" rel="tag">Remote Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STK/" rel="tag">STK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/StreetView/" rel="tag">StreetView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tablet/" rel="tag">Tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-Touch/" rel="tag">Ubuntu Touch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/" rel="tag">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WIndows-7/" rel="tag">WIndows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wacom/" rel="tag">Wacom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/abd/" rel="tag">abd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/" rel="tag">adb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algothrim/" rel="tag">algothrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anime/" rel="tag">anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cancro/" rel="tag">cancro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromeos/" rel="tag">chromeos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/" rel="tag">cycling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/" rel="tag">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian11/" rel="tag">debian11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian12/" rel="tag">debian12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emr/" rel="tag">emr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flashing/" rel="tag">flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/information/" rel="tag">information</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ip/" rel="tag">ip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipv6/" rel="tag">ipv6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/job/" rel="tag">job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nohup/" rel="tag">nohup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/" rel="tag">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postmarketOS/" rel="tag">postmarketOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/" rel="tag">router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrap/" rel="tag">scrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scraping/" rel="tag">scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrapping/" rel="tag">scrapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tablet/" rel="tag">tablet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timestamp/" rel="tag">timestamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/" rel="tag">win7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt86047/" rel="tag">wt86047</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wt88047/" rel="tag">wt88047</a></li></ul>
     </div>
   </div>
 
@@ -507,7 +532,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Mathematics/" style="font-size: 13.33px;">Mathematics</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 10px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
+      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Android-Encryption/" style="font-size: 10px;">Android Encryption</a> <a href="/tags/Android-Extraction/" style="font-size: 15px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 11.67px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/CG/" style="font-size: 13.33px;">CG</a> <a href="/tags/ChromeOS/" style="font-size: 10px;">ChromeOS</a> <a href="/tags/Creator-Laptops/" style="font-size: 10px;">Creator Laptops</a> <a href="/tags/Data-Interpretation/" style="font-size: 10px;">Data Interpretation</a> <a href="/tags/Data-Recovery/" style="font-size: 11.67px;">Data Recovery</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/Debian11/" style="font-size: 10px;">Debian11</a> <a href="/tags/ECS/" style="font-size: 11.67px;">ECS</a> <a href="/tags/EMR/" style="font-size: 15px;">EMR</a> <a href="/tags/GIS/" style="font-size: 11.67px;">GIS</a> <a href="/tags/HDD/" style="font-size: 13.33px;">HDD</a> <a href="/tags/HDMI/" style="font-size: 10px;">HDMI</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/InuYasha/" style="font-size: 10px;">InuYasha</a> <a href="/tags/MINGW/" style="font-size: 10px;">MINGW</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Mathematics/" style="font-size: 15px;">Mathematics</a> <a href="/tags/Miflash/" style="font-size: 10px;">Miflash</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/Mini-PC/" style="font-size: 13.33px;">Mini PC</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Port-Forwarding/" style="font-size: 10px;">Port Forwarding</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RTL8111/" style="font-size: 10px;">RTL8111</a> <a href="/tags/Remote-Connection/" style="font-size: 10px;">Remote Connection</a> <a href="/tags/STK/" style="font-size: 10px;">STK</a> <a href="/tags/StreetView/" style="font-size: 10px;">StreetView</a> <a href="/tags/Tablet/" style="font-size: 10px;">Tablet</a> <a href="/tags/Ubuntu-Touch/" style="font-size: 10px;">Ubuntu Touch</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/WIndows-7/" style="font-size: 10px;">WIndows 7</a> <a href="/tags/Wacom/" style="font-size: 10px;">Wacom</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows-10/" style="font-size: 10px;">Windows 10</a> <a href="/tags/abd/" style="font-size: 10px;">abd</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/algothrim/" style="font-size: 10px;">algothrim</a> <a href="/tags/anime/" style="font-size: 11.67px;">anime</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/cancro/" style="font-size: 11.67px;">cancro</a> <a href="/tags/chromeos/" style="font-size: 10px;">chromeos</a> <a href="/tags/cycling/" style="font-size: 10px;">cycling</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/debian11/" style="font-size: 13.33px;">debian11</a> <a href="/tags/debian12/" style="font-size: 10px;">debian12</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/emr/" style="font-size: 11.67px;">emr</a> <a href="/tags/flashing/" style="font-size: 10px;">flashing</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/ip/" style="font-size: 10px;">ip</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/kaggle/" style="font-size: 10px;">kaggle</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/monitor/" style="font-size: 10px;">monitor</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/nohup/" style="font-size: 10px;">nohup</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/postmarketOS/" style="font-size: 11.67px;">postmarketOS</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/scrap/" style="font-size: 11.67px;">scrap</a> <a href="/tags/scraping/" style="font-size: 15px;">scraping</a> <a href="/tags/scrapping/" style="font-size: 10px;">scrapping</a> <a href="/tags/server/" style="font-size: 13.33px;">server</a> <a href="/tags/ssh/" style="font-size: 18.33px;">ssh</a> <a href="/tags/storage/" style="font-size: 10px;">storage</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a> <a href="/tags/tablet/" style="font-size: 16.67px;">tablet</a> <a href="/tags/timestamp/" style="font-size: 10px;">timestamp</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/wt86047/" style="font-size: 10px;">wt86047</a> <a href="/tags/wt88047/" style="font-size: 10px;">wt88047</a>
     </div>
   </div>
 
@@ -529,23 +554,23 @@
       <ul>
         
           <li>
-            <a href="/2024/05/09/Being-mature-and-being-old/">Being mature and being old</a>
+            <a href="/2024/05/12/About-being-normal/">About being normal</a>
           </li>
         
           <li>
-            <a href="/2024/05/09/A-glance-at-Mathematics-PhD/">A glance at Mathematics PhD</a>
+            <a href="/2024/05/11/A-glance-at-job-market/">A glance at job market</a>
           </li>
         
           <li>
-            <a href="/2024/05/08/About-Math-amateur/">About Math amateur</a>
+            <a href="/2024/05/11/Reviewing-while-decision-making/">Reviewing while decision making</a>
           </li>
         
           <li>
-            <a href="/2024/05/08/More-about-Graph-and-Comparison-among-universities/">More about Graph and Comparison among universities</a>
+            <a href="/2024/05/11/About-GunxSword/">About GunxSword</a>
           </li>
         
           <li>
-            <a href="/2024/05/08/memory-block/">memory block</a>
+            <a href="/2024/05/10/left-upper-quadrant-pain/">left upper quadrant pain</a>
           </li>
         
       </ul>
